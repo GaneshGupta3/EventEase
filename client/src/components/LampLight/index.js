@@ -1,0 +1,1 @@
+export { LampLight } from "./LampLight";
