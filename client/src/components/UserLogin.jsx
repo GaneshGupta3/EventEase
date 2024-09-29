@@ -34,7 +34,8 @@ const UserLogin = () => {
       console.log(serviceProviders); //all the service providers
       dispatch(userActions.loggedIn({
         username : data.username,
-        currentServiceProviderList : serviceProviders
+        currentServiceProviderList : serviceProviders,
+        userDetails : data.userDetails,
       }));
       dispatch(generalUserAction.setGeneralUser({userType : "user"}));
       // navigate("/user/")

@@ -8,16 +8,19 @@ const userSlice = createSlice({
         username: "",
         currentServiceProviderList: [],
         serviceProviderSelected : null,
+        userDetails: null,
     },
     reducers: {
         loggedIn: (state, action) => {
             // Destructure from action.payload
             console.log("it is called");
-            const { username, currentServiceProviderList } = action.payload;
+            const { username, currentServiceProviderList, userDetails } = action.payload;
 
             state.userLoggedIn = true;
             state.username = username;
             state.currentServiceProviderList = currentServiceProviderList;
+            console.log(userDetails);
+            state.userDetails = userDetails;
         },
         loggedOut: (state) => {
             state.userLoggedIn = false; // Reset logged-in state

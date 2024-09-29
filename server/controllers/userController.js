@@ -62,7 +62,7 @@ const userExists = async (req, res) => {
     if (validPassword) {
       return res
         .status(200)
-        .json({ message: "Logged in successfully", username: user.username });
+        .json({ message: "Logged in successfully", username: user.username,userDetails : user });
     } else {
       return res.status(401).json({ message: "Incorrect password" });
     }

@@ -59,7 +59,7 @@ const loginServiceProvider = async (req,res) => {
     if(!validPassword){
       return res.status(401).json({message : "not valid password"});
     }
-    return res.status(200).json({message : "logged in successfully"});
+    return res.status(200).json({message : "logged in successfully", serviceProvider : serviceProvider });
   } catch (error) {
     return res.status(500).json({message : "internal server error during login"});
   }

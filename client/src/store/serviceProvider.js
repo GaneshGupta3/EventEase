@@ -7,13 +7,16 @@ const serviceProviderSlice = createSlice({
         username: "",
         currentUserList: [],
         userSelected: null,
+        serviceProviderDetails: null,
     },
     reducers: {
         loggedIn: (state, action) => {
-            const { username, currentUserList } = action.payload;
+            const { username, currentUserList,serviceProvider } = action.payload;
+            console.log(serviceProvider);
             state.serviceProviderLoggedIn = true; // Set it to true for login
             state.username = username;
             state.currentUserList = currentUserList;
+            state.serviceProviderDetails = serviceProvider;
         },
         loggedOut: (state) => {
             state.serviceProviderLoggedIn = false; // Set to false when logged out
@@ -23,12 +26,12 @@ const serviceProviderSlice = createSlice({
         // Reducer for serviceProvider
         selectUser: (state, action) => {
             const { user } = action.payload;
-            console.log("Selected User:", user); // Debugging
+            // console.log("Selected User:", user); // Debugging
             state.userSelected = user;
         },
         unSelectUser: (state) => {
             state.userSelected = null;
-        }
+        },
     },
 });
 

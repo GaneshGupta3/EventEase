@@ -30,6 +30,7 @@ const ServiceProviderLogin = () => {
             }
         );
         const data = await loginResponse.json();
+        console.log(data);
 
         if (loginResponse.ok) {
             const response = await fetch("/api/users/getUsers");
@@ -38,6 +39,7 @@ const ServiceProviderLogin = () => {
                 serviceProviderActions.loggedIn({
                     username: data.username,
                     currentUserList: users,
+                    serviceProvider : data,
                 })
             );
             dispatch(
