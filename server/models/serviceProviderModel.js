@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const serviceSchema = new mongoose.Schema({
     serviceName: {
         type: String,
-        required: true,
+        required: true // Ensuring that service name is mandatory
     }
 });
 
@@ -14,23 +14,33 @@ const ServiceProviderSchema = new mongoose.Schema(
         username: {  
             type: String,
             required: true,
-            unique: true // Ensure unique index is applied to "username", not "userName"
+            unique: true // Ensure unique index is applied to "username"
         },
         email: {
             type: String,
             required: true,
-            unique: true
+            unique: true,
+            match: [/.+\@.+\..+/, 'Please fill a valid email address'] // Email validation
         },
         password: {
             type: String,
             required: true
+            // Use bcrypt for password hashing when storing
         },
-        services: [serviceSchema],
+        services: {
+            type: [serviceSchema],
+            validate: [arrayLimit, 'A provider must have at least one service'] // Ensure at least one service
+        },
+        locations : {
+            type: [String],
+            // required: true
+        },
         reviews: [
             {
                 userId: {
                     type: mongoose.Schema.Types.ObjectId,
-                    ref: 'User', // Reference to User schema
+                    ref: 'User',
+                    unique: true // Prevent multiple reviews from the same user
                 },
                 comment: {
                     type: String,
@@ -49,6 +59,11 @@ const ServiceProviderSchema = new mongoose.Schema(
     },
     { timestamps: true }
 );
+
+// Helper function to validate array length
+function arrayLimit(val) {
+    return val.length > 0;
+}
 
 // Create the ServiceProvider model
 const ServiceProvider = mongoose.model("ServiceProvider", ServiceProviderSchema);
