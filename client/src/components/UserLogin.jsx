@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { generalUserAction } from "../store/generalUser";
 import React from "react";
 import "./UserLogin.css";
@@ -61,7 +61,13 @@ const UserLogin = () => {
         }
     }
 
+    const handleCancle = (e)=>{
+        e.preventDefault();
+        navigate("/");
+    }
+
     return (
+        <>
         <div className="log-in" style={{height : "100vh"}}>
             <div className="frame" >
                 <div className="frame-wrapper" style={{height : "auto"}}>
@@ -73,6 +79,8 @@ const UserLogin = () => {
                                         Log in
                                     </button>
                                     <img
+                                        onClick={handleCancle}
+                                        style={{cursor : "pointer"}}
                                         className="icon-close-v"
                                         alt="Icon close v"
                                         src="https://c.animaapp.com/L49S2jLO/img/icon---24px---close---v-2.svg"
@@ -88,7 +96,7 @@ const UserLogin = () => {
                                             />
                                             <input
                                                 type="text"
-                                                placeholder="enter email : "
+                                                placeholder="enter email "
                                                 ref={email}
                                             />
                                         </div>
@@ -107,7 +115,7 @@ const UserLogin = () => {
                                                         : "text"
                                                 }
                                                 ref={password}
-                                                placeholder="enter password : "
+                                                placeholder="enter password "
                                             />
                                             <button
                                                 onClick={handlePasswordToggle}
@@ -192,6 +200,7 @@ const UserLogin = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

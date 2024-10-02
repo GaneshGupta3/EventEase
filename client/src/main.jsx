@@ -12,6 +12,9 @@ import ServiceProviderRegister from "./components/ServiceProviderRegister.jsx";
 import UserList from "./components/UserList.jsx";
 import UserSelected from "./components/UserSelected.jsx";
 import SelectedServiceProvider from "./components/SelectedServiceProvider.jsx";
+import HeroSection from "./components/HeroSection.jsx";
+import ServiceDetails from "./components/ServiceDetails.jsx";
+import Confirm from "./components/Confirm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,7 @@ const router = createBrowserRouter([
         </Provider>
     ),
     children: [
+      {path : "/", element: <HeroSection />},
       { path: "/user/login", element: <UserLogin /> },
       { path: "/user/register", element: <UserRegister /> },
       { path: "/user/homePage", element: <UserList /> },
@@ -30,6 +34,8 @@ const router = createBrowserRouter([
       { path: "/serviceProvider/login", element: <ServiceProviderLogin /> },
       {path : "/serviceProvider/homePage" , element : <UserList />},
       {path : "/serviceProvider/userProfile" , element : <UserSelected />},
+      {path : "/serviceProvider/serviceDetails" , element : <ServiceDetails />},
+      {path : "/serviceProvider/confirm" , element : <Confirm />},
     ],
   },
 ]);

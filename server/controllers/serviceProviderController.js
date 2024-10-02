@@ -1,58 +1,60 @@
 const ServiceProvider = require("../models/serviceProviderModel.js");
+const Service = require("../models/services.js");
 const {
     fetchAllServiceProviders,
 } = require("../services/serviceProviderService.js");
-const bcrypt = require('bcrypt'); // For password hashing
+
 
 const addServiceProvider = async (req, res) => {
-    const { username, email, password, serviceTypes, locations } = req.body;
-
-    console.log("Received data:", locations);
-
-    // Check for required fields
-    if (!username || !email || !password || !serviceTypes || !Array.isArray(serviceTypes) || serviceTypes.length === 0) {
-        return res.status(400).json({
-            message: "All fields, including service types, are required.",
-        });
-    }
-
-    // Hash the password before saving it
-    // const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
-
-    // Convert serviceTypes to array of objects
-    const serviceTypeObj = serviceTypes.map(type => ({ serviceName: type }));
-
-    // Ensure locations is an array; if it's a string, split it into an array
-    const newLocations = Array.isArray(locations) ? locations : locations.split(" ").filter(Boolean);
-
-    console.log(newLocations);
+    const { username, email, password, serviceDetails } = req.body;
 
     try {
-        // Create a new service provider with services
+        // Create and save the ServiceProvider first
         const newServiceProvider = new ServiceProvider({
             username,
             email,
-            password: password, // Store the hashed password
-            services: serviceTypeObj, // Map the array of strings to array of objects
-            locations: newLocations,
+            password, // You should hash the password before storing it in production
         });
 
-        // Save the new service provider to the database
-        await newServiceProvider.save();
+        // Save the ServiceProvider
+        const savedServiceProvider = await newServiceProvider.save();
+        console.log("ServiceProvider saved:", savedServiceProvider);
 
-        // Respond with success message
-        return res.status(201).json({
-            message: "ServiceProvider registered successfully",
-            serviceProvider: newServiceProvider,
+        // Process the service details and associate them with the saved service provider
+        const serviceDocs = serviceDetails.map(service => ({
+            serviceProvider: savedServiceProvider._id, // Associate service with the created ServiceProvider
+            serviceName: service.serviceName,
+            locations: service.locations,
+            guests: service.guests,
+            parkingNumbers: service.parkingNumbers,
+            landArea: service.landArea,
+            advanceBooking: service.advanceBooking,
+            totalCost: service.totalCost,
+        }));
+
+        console.log("Service Docs to be saved:", serviceDocs); // Log serviceDocs for debugging
+
+        // Insert services into the database
+        const savedServices = await Service.insertMany(serviceDocs);
+        console.log("Services saved:", savedServices);
+
+        // Send success response with the created ServiceProvider and its associated services
+        res.status(201).json({
+            message: "ServiceProvider and services added successfully.",
+            serviceProvider: savedServiceProvider,
+            services: savedServices,
         });
     } catch (error) {
-        // Respond with error message in case of any failure
-        return res.status(500).json({
-            message: "Error creating serviceProvider",
-            error: error.message,
-        });
+        console.error("Error during service provider creation:", error); // Log the error for debugging
+        if (error.code === 11000) {
+            // Handle unique constraint violation
+            res.status(400).json({ message: "Username or email already exists" });
+        } else {
+            res.status(500).json({ message: "Error creating service provider", error: error.message });
+        }
     }
 };
+
 
 const getAllServiceProviders = async (req, res) => {
     try {

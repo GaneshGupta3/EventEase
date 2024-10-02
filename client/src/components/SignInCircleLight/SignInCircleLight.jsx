@@ -11,7 +11,7 @@ export const SignInCircleLight = ({ className }) => {
     <img
       className={`sign-in-circle-light ${className}`}
       alt="Sign in circle light"
-      src="https://c.animaapp.com/WW0sOHBk/img/sign-in-circle-light-1.png"
+      src="https://c.animaapp.com/tRsqlKbF/img/sign-in-circle-light-1.png"
     />
   );
 };

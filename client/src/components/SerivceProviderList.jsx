@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import ServiceProvider from "./ServiceProvider";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import React from "react";

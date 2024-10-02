@@ -65,6 +65,10 @@ const ServiceProviderLogin = () => {
             console.log("Login failed. Please check your credentials.");
         }
     }
+    const handleCancle = (e) => {
+        e.preventDefault();
+        navigate("/");
+    };
 
     return (
         <div className="log-in" style={{height : "100vh"}}>
@@ -78,6 +82,8 @@ const ServiceProviderLogin = () => {
                                         Log in
                                     </button>
                                     <img
+                                        onClick={handleCancle}
+                                        style={{ cursor: "pointer" }}
                                         className="icon-close-v"
                                         alt="Icon close v"
                                         src="https://c.animaapp.com/L49S2jLO/img/icon---24px---close---v-2.svg"
@@ -93,7 +99,7 @@ const ServiceProviderLogin = () => {
                                             />
                                             <input
                                                 type="text"
-                                                placeholder="enter email : "
+                                                placeholder="enter email "
                                                 ref={email}
                                             />
                                         </div>
@@ -112,7 +118,7 @@ const ServiceProviderLogin = () => {
                                                         : "text"
                                                 }
                                                 ref={password}
-                                                placeholder="enter password : "
+                                                placeholder="enter password "
                                             />
                                         
                                         </div>

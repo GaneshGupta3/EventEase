@@ -1,23 +1,62 @@
-import { Link, useNavigate,Outlet } from "react-router-dom"; // For navigation
-import { useSelector } from "react-redux"; // For accessing Redux state
-import { useEffect, useState } from "react";
-import React from "react";
+import { useNavigate } from "react-router-dom"; // For navigation
+import React, { useRef } from "react";
 import "./styles.css";
+import FigmaServiceProviderCard from "./FigmaCard";
+
 
 const HeroSection = () => {
-    const [loginSelected , setLoginSelected] = useState(false);
     const navigate = useNavigate();
+    const location = useRef();
+    const eventType =useRef();
+    const budget =useRef();
+    const serviceType = useRef();
     const handleLoginButtonClick = (e)=>{
         e.preventDefault();
-        setLoginSelected(true)
         navigate("/user/login");
     }
+    
+
+    const filterServiceProvidersByLocation = (serviceProviders, userLocation) => {
+        
+        // Filter service providers whose location includes the provided userLocation
+        return serviceProviders.filter((serviceProvider) => 
+            serviceProvider.locations.includes(userLocation)
+        );
+    };
+    
+    const handleSearch = async () => {
+        try {
+            // Fetching service providers from the backend API
+            const response = await fetch("/api/serviceProvider/getServiceProviders");
+    
+            if (!response.ok) {
+                throw new Error("Failed to fetch service providers");
+            }
+    
+            let serviceProviders = await response.json();
+            console.log(serviceProviders); // Log all service providers for debugging
+    
+            // Check if location input is available before filtering
+            if (location.current.value) {
+                // Filter service providers based on location
+                const userLocation = location.current.value;
+                console.log("user Location : " , userLocation);
+                serviceProviders = filterServiceProvidersByLocation(serviceProviders, userLocation);
+                console.log(serviceProviders);
+            }
+        } catch (error) {
+            console.error("Error fetching service providers:", error.message);
+        }
+    };
+
+    const handleServiceTypeChange = ()=> {
+        
+    }
+
 
 
   return (
     <>
-    {loginSelected?
-      <Outlet></Outlet>:
       <div className="landing-page">
                 <div className="frame">
                     <div className="header-header">
@@ -60,7 +99,7 @@ const HeroSection = () => {
                                         alt="Icon search"
                                         src="https://c.animaapp.com/1lNWFHbB/img/icon---24px---search.svg"
                                     />
-                                    <div className="icon-after">Search</div>
+                                    <div className="icon-after" >Search</div>
                                 </div>
                                 <div className="button-small-v" style={{cursor : "pointer"}} onClick={(e) => handleLoginButtonClick(e)}>
                                     <div
@@ -96,8 +135,7 @@ const HeroSection = () => {
                                             <div className="frame-10">
                                                 <div className="text-field-large">
                                                     <div className="div-2">
-                                                        <label htmlFor="options">Choose an option:</label>
-                                                        
+                                                    <input className="default" ref={location} placeholder="Location" />
                                                         <img
                                                             className="img-2"
                                                             alt="Icon map"
@@ -107,9 +145,8 @@ const HeroSection = () => {
                                                 </div>
                                                 <div className="text-field-large">
                                                     <div className="div-2">
-                                                        <div className="default">
-                                                            Event Type
-                                                        </div>
+                                                        <input className="default" ref={eventType} placeholder="Event Type" />
+                                                            
                                                         <img
                                                             className="img-2"
                                                             alt="Icon up down"
@@ -119,9 +156,7 @@ const HeroSection = () => {
                                                 </div>
                                                 <div className="text-field-large">
                                                     <div className="div-2">
-                                                        <div className="default">
-                                                            Price Range
-                                                        </div>
+                                                    <input className="default" ref={budget} placeholder="Budget" />
                                                         <img
                                                             className="img-2"
                                                             alt="Icon up down"
@@ -130,7 +165,7 @@ const HeroSection = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button className="button-large-v">
+                                            <button style={{cursor: "pointer"}} className="button-large-v" onClick={handleSearch}>
                                                 <div className="active">
                                                     Search
                                                 </div>
@@ -246,16 +281,16 @@ const HeroSection = () => {
                                 </div>
                             </div>
                             <div className="filter-button">
-                                <div className="weddings-receptions">
+                                <div style={{cursor : "pointer"}} className="weddings-receptions" onClick={handleServiceTypeChange}>
                                     Weddings &amp; Receptions
                                 </div>
-                                <div className="text-wrapper-4">
+                                <div style={{cursor : "pointer"}} className="text-wrapper-4" onClick={handleServiceTypeChange}>
                                     Corporate Events
                                 </div>
-                                <div className="text-wrapper-4">
+                                <div style={{cursor : "pointer"}} className="text-wrapper-4" onClick={handleServiceTypeChange}>
                                     Birthday Parties
                                 </div>
-                                <div className="text-wrapper-4">
+                                <div style={{cursor : "pointer"}} className="text-wrapper-4" onClick={handleServiceTypeChange}>
                                     Workshops &amp; Seminars
                                 </div>
                             </div>
@@ -681,6 +716,11 @@ const HeroSection = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="frame-18">
+                                <FigmaServiceProviderCard></FigmaServiceProviderCard>
+                                <FigmaServiceProviderCard></FigmaServiceProviderCard>
+                                <FigmaServiceProviderCard></FigmaServiceProviderCard>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -892,7 +932,7 @@ const HeroSection = () => {
                                         placeholder="Enter your Email"
                                         type="email"
                                     />
-                                    <button className="button-style-small">
+                                    <button style={{cursor : "pointer"}} className="button-style-small">
                                         <div className="text-wrapper-7">
                                             Subscribe
                                         </div>
@@ -1032,7 +1072,7 @@ const HeroSection = () => {
                         </p>
                     </div>
                 </div>
-            </div>}
+            </div>
     </>
   );
 };

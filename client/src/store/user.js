@@ -22,6 +22,10 @@ const userSlice = createSlice({
             console.log(userDetails);
             state.userDetails = userDetails;
         },
+        filteredServiceProvider : (state,action) => {
+            const  {updatedServiceProviderList} = action.payload;
+            state.currentServiceProviderList = updatedServiceProviderList;
+        },
         loggedOut: (state) => {
             state.userLoggedIn = false; // Reset logged-in state
             state.username = ""; // Clear the username
