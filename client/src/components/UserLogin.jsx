@@ -1,12 +1,11 @@
-import { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { userActions } from "../store/user";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import { generalUserAction } from "../store/generalUser";
-import React from "react";
-import "./UserLogin.css";
+import React, { useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { generalUserAction } from "../store/generalUser";
+import { userActions } from "../store/user";
+import "./UserLogin.css";
 
 const UserLogin = () => {
     const email = useRef();
@@ -193,7 +192,7 @@ const UserLogin = () => {
                                 className="don-t-have-an-2"
                                 to="/serviceProvider/login"
                             >
-                                login as a service Provider
+                                service Provider
                             </Link>
                         </div>
                     </div>

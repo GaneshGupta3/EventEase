@@ -1,11 +1,13 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import React from "react";
 import "./styles.css";
+import { userActions } from "../store/user";
 
 const ServiceProviderList = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const { currentServiceProviderList } = useSelector((store) => store.user);
 
     useEffect(() => {
@@ -14,6 +16,11 @@ const ServiceProviderList = () => {
             navigate("/user/homePage");
         }
     }, [navigate, currentServiceProviderList]);
+
+    const handleLogout = ()=>{
+        dispatch(userActions.loggedOut());
+        navigate("/")
+    }
 
     return (
         <>
@@ -61,10 +68,11 @@ const ServiceProviderList = () => {
                                     />
                                     <div className="icon-after">Search</div>
                                 </div>
-                                <div className="button-small-v">
+                                <div style={{cursor : "pointer"}} className="button-small-v">
                                     <div
                                         className="text-wrapper-2"
                                         style={{ width: "auto" }}
+                                        onClick={handleLogout}
                                     >
                                         Logout
                                     </div>

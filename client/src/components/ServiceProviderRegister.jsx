@@ -22,7 +22,7 @@ export const ServiceProviderRegister = () => {
         const currUsername = username.current.value;
         const currEmail = email.current.value;
         const currPassword = password.current.value;
-        const currServiceTypes = serviceTypes.current.value.split(" ");
+        const currServiceTypes = serviceTypes.current.value.toLowerCase().split(" ");
         dispatch(registeringServiceProviderActions.handleInitialRegistration({
             username: currUsername,
             email : currEmail,

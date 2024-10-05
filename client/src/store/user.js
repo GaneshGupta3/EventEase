@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { serviceProviderActions } from "./serviceProvider";
 
 const userSlice = createSlice({
     name: "user",
@@ -7,14 +6,15 @@ const userSlice = createSlice({
         userLoggedIn: false,
         username: "",
         currentServiceProviderList: [],
-        serviceProviderSelected : null,
+        serviceProviderSelected: null,
         userDetails: null,
     },
     reducers: {
         loggedIn: (state, action) => {
             // Destructure from action.payload
             console.log("it is called");
-            const { username, currentServiceProviderList, userDetails } = action.payload;
+            const { username, currentServiceProviderList, userDetails } =
+                action.payload;
 
             state.userLoggedIn = true;
             state.username = username;
@@ -22,14 +22,16 @@ const userSlice = createSlice({
             console.log(userDetails);
             state.userDetails = userDetails;
         },
-        filteredServiceProvider : (state,action) => {
-            const  {updatedServiceProviderList} = action.payload;
+        filteredServiceProvider: (state, action) => {
+            const { updatedServiceProviderList } = action.payload;
             state.currentServiceProviderList = updatedServiceProviderList;
         },
         loggedOut: (state) => {
-            state.userLoggedIn = false; // Reset logged-in state
-            state.username = ""; // Clear the username
-            state.currentServiceProviderList = []; // Clear service provider list
+            state.userLoggedIn = false;
+            state.username = "";
+            state.currentServiceProviderList = [];
+            state.serviceProviderSelected = null;
+            state.userDetails = null;
         },
         selectServiceProvider: (state, action) => {
             const { serviceProviderSelected } = action.payload;
@@ -38,8 +40,8 @@ const userSlice = createSlice({
         },
         unSelectServiceProvider: (state) => {
             state.serviceProviderSelected = null;
-        }
-    }
+        },
+    },
 });
 
 export default userSlice;

@@ -181,7 +181,7 @@ const ServiceProviderLogin = () => {
                                 className="don-t-have-an-2"
                                 to="/user/login"
                             >
-                                Login as user
+                                user
                             </Link>
                         </div>
                     </div>

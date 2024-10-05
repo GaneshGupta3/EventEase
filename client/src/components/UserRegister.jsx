@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { MdOutlineMail } from "react-icons/md";
-import { IoPersonCircleOutline } from "react-icons/io5";
 import { FaKey } from "react-icons/fa6";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { MdOutlineMail } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserRegister = () => {
     const username = useRef();
@@ -108,14 +108,6 @@ const UserRegister = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="check-wrapper">
-                                <div className="check">
-                                    <div className="check-list" />
-                                    <p className="i-agree-to-all-terms">
-                                        I agree to all Terms &amp; Conditions
-                                    </p>
                                 </div>
                             </div>
                         </div>

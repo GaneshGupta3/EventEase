@@ -1,0 +1,335 @@
+.create-account {
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.create-account .frame {
+  -webkit-backdrop-filter: blur(80px) brightness(100%);
+  align-items: center;
+  align-self: stretch;
+  backdrop-filter: blur(80px) brightness(100%);
+  background-color: #191919cc;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 8px;
+  justify-content: center;
+  padding: 250px 380px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .log-in {
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #d6d6d6;
+  border-radius: 10px;
+  display: flex;
+  gap: 8px;
+  height: 908px;
+  margin-bottom: -192px;
+  margin-left: -130px;
+  margin-right: -130px;
+  margin-top: -192px;
+  padding: 40px 30px;
+  position: relative;
+  width: 940px;
+}
+
+.create-account .div {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: -25px;
+  position: relative;
+}
+
+.create-account .frame-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .frame-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 566px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .frame-4 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .request-for-visit {
+  color: #191919;
+  flex: 1;
+  font-family: "Manrope", Helvetica;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.72px;
+  line-height: 50.4px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.create-account .icon-close-v {
+  height: 30px;
+  position: relative;
+  width: 30px;
+}
+
+.create-account .text-field-large {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #d6d6d6;
+  border-radius: 10px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  padding: 14px 16px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .frame-5 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .img {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.create-account .default {
+  color: #6e6e6e;
+  flex: 1;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 32.4px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.create-account .labels-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .labels {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px;
+  position: relative;
+}
+
+.create-account .sign-in-circle-light-instance {
+  left: unset !important;
+  position: relative !important;
+  top: unset !important;
+}
+
+.create-account .check-wrapper {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .check {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  position: relative;
+  width: 206px;
+}
+
+.create-account .check-list {
+  border: 2px solid;
+  border-color: #191919;
+  border-radius: 4px;
+  height: 18px;
+  position: relative;
+  width: 18px;
+}
+
+.create-account .i-agree-to-all-terms {
+  color: #6e6e6e;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-right: -98px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-account .button-style-small-wrapper {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .button-style-small {
+  align-items: center;
+  align-self: stretch;
+  background-color: #191919;
+  border-radius: 10px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px 24px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .send-request {
+  color: #ffffff;
+  flex: 1;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.create-account .line {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .frame-6 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.create-account .don-t-have-an {
+  color: #6e6e6e;
+  font-family: "Manrope", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 28px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-account .text-wrapper {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 28px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.create-account .frame-7 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  gap: 8px;
+  height: 38px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Style the select box */
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none; /* Remove default dropdown arrow for WebKit browsers */
+  -moz-appearance: none; /* Remove default dropdown arrow for Firefox */
+  font-size: medium;
+}
+
+/* Style the select dropdown arrow */
+select::after {
+  content: "▼";
+  float: right;
+  padding-right: 10px;
+  color: #888;
+  pointer-events: none;
+}

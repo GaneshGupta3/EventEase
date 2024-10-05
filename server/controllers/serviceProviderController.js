@@ -21,16 +21,43 @@ const addServiceProvider = async (req, res) => {
         console.log("ServiceProvider saved:", savedServiceProvider);
 
         // Process the service details and associate them with the saved service provider
-        const serviceDocs = serviceDetails.map(service => ({
-            serviceProvider: savedServiceProvider._id, // Associate service with the created ServiceProvider
-            serviceName: service.serviceName,
-            locations: service.locations,
-            guests: service.guests,
-            parkingNumbers: service.parkingNumbers,
-            landArea: service.landArea,
-            advanceBooking: service.advanceBooking,
-            totalCost: service.totalCost,
-        }));
+        const serviceDocs = serviceDetails.map(service => {
+            // Create an object to store the service data
+            const serviceDoc = {
+                serviceProvider: savedServiceProvider._id, // Associate service with the created ServiceProvider
+                serviceName: service.serviceName, // Assuming serviceName is required
+            };
+
+            // Conditionally add other fields only if they are present
+            if (service.locations) {
+                serviceDoc.locations = service.locations;
+            }
+            if (service.guests) {
+                serviceDoc.guests = service.guests;
+            }
+            if (service.parkingNumbers) {
+                serviceDoc.parkingNumbers = service.parkingNumbers;
+            }
+            if (service.landArea) {
+                serviceDoc.landArea = service.landArea;
+            }
+            if (service.advanceBooking) {
+                serviceDoc.advanceBooking = service.advanceBooking;
+            }
+            if (service.totalCost) {
+                serviceDoc.totalCost = service.totalCost;
+            }
+            if(service.chargesPerSquareFeet){
+                serviceDoc.chargesPerSquareFeet = service.chargesPerSquareFeet;
+            }
+            if(service.densityBalloons){
+                serviceDoc.densityBalloons = service.densityBalloons;
+            }
+            if(service.maximumLandCoverage){
+                serviceDoc.maximumLandCoverage = service.maximumLandCoverage;
+            }
+            return serviceDoc; // Return the constructed serviceDoc object
+        });
 
         console.log("Service Docs to be saved:", serviceDocs); // Log serviceDocs for debugging
 

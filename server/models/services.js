@@ -18,23 +18,44 @@ const serviceSchema = new mongoose.Schema(
     },
     guests : {
       type: String,
-      required : true,
+      // required : true,
     },
     parkingNumbers : {
       type : String,
-      required : true
+      // required : true
     },
     landArea : {
       type : String ,
-      required : true
+      // required : true
     },
     advanceBooking : {
       type : String, 
-      required : true
+      // required : true
     },
     totalCost : {
       type : String ,
-      required : true 
+      // required : true 
+    },
+    chargesPerSquareFeet: {
+      type : String,
+    },
+    densityBalloons : {
+      type : String,
+    },
+    maximumLandCoverage : {
+      type : String,
+    },
+    costPerPlate : {
+      type : String,
+    },
+    foodHours:{
+      type : String
+    },
+    vegMenu : {
+      type : [String]
+    },
+    nonvegMenu:{
+      type : [String]
     }
   },
   { timestamps: true } // Optionally add timestamps for createdAt and updatedAt

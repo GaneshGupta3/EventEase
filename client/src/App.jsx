@@ -1,12 +1,11 @@
-import "./App.css";
-import "../global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HeroSection from "./components/HeroSection";
 import { useSelector } from "react-redux";
+import "../global.css";
+import "./App.css";
+import SelectedServiceProvider from "./components/SelectedServiceProvider";
 import ServiceProviderList from "./components/SerivceProviderList";
 import UserList from "./components/UserList";
 import UserSelected from "./components/UserSelected";
-import SelectedServiceProvider from "./components/SelectedServiceProvider";
 
 import { Outlet } from "react-router-dom";
 
