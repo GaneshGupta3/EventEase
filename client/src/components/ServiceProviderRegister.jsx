@@ -7,11 +7,13 @@ import { SignInCircleLight } from "./SignInCircleLight";
 import "./ServiceProviderRegister.css";
 import { useDispatch } from "react-redux";
 import {registeringServiceProviderActions} from "../store/registeringServiceProvider.js"
+import { FaPhoneAlt } from "react-icons/fa";
 
 export const ServiceProviderRegister = () => {
     const username = useRef();
     const email = useRef();
     const password = useRef();
+    const phoneNumber = useRef();
     const serviceTypes = useRef();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -23,10 +25,12 @@ export const ServiceProviderRegister = () => {
         const currEmail = email.current.value;
         const currPassword = password.current.value;
         const currServiceTypes = serviceTypes.current.value.toLowerCase().split(" ");
+        const currPhoneNumber = phoneNumber.current.value;
         dispatch(registeringServiceProviderActions.handleInitialRegistration({
             username: currUsername,
             email : currEmail,
             password : currPassword,
+            phoneNumber : currPhoneNumber,
             serviceTypes : currServiceTypes,
         }))
 
@@ -116,6 +120,16 @@ export const ServiceProviderRegister = () => {
                                                     ref={email}
                                                     className="default"
                                                     placeholder="Enter your Email Address"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="text-field-large">
+                                            <div className="frame-5">
+                                                <FaPhoneAlt size={22} />
+                                                <input
+                                                    ref={phoneNumber}
+                                                    className="default"
+                                                    placeholder="Enter your Phone Number"
                                                 />
                                             </div>
                                         </div>

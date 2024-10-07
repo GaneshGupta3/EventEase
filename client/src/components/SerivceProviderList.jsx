@@ -1,14 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import "./styles.css";
 import { userActions } from "../store/user";
+import CardList from "./CardList";
+import ViewDetailsHall from "./ViewDetailsHall";
 
 const ServiceProviderList = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { currentServiceProviderList } = useSelector((store) => store.user);
+    const { currServiceProvider ,currentServiceProviderList,currServiceProviderListType, allServices } = useSelector(
+        (store) => store.user
+    );
 
     useEffect(() => {
         if (!currentServiceProviderList?.length) {
@@ -17,14 +21,40 @@ const ServiceProviderList = () => {
         }
     }, [navigate, currentServiceProviderList]);
 
-    const handleLogout = ()=>{
+    const handleLogout = () => {
         dispatch(userActions.loggedOut());
-        navigate("/")
+        navigate("/");
+    };
+
+    const handleServiceTypeChange = (currServiceType) => {
+        console.log(currServiceType);
+        dispatch(
+            userActions.changeServiceType({ currServiceType: currServiceType })
+        );
+    };
+
+    const fetchInitialServices = async () => {
+        const allServices = await fetch("/api/services/getAllServices");
+        const data = await allServices.json();
+        return data;
+    };
+
+    const handleFetchInitialServices = async () => {
+        const initialServices = await fetchInitialServices();
+        // console.log(initialServices);
+        dispatch(
+            userActions.addInitialServices({ allServices: initialServices })
+        );
+    };
+
+    if (!allServices?.length) {
+        handleFetchInitialServices();
     }
 
     return (
         <>
-            <div className="landing-page">
+            
+            {currServiceProvider ? (<ViewDetailsHall />): <div className="landing-page">
                 <div className="frame">
                     <div className="header-header">
                         <div className="div">
@@ -68,7 +98,10 @@ const ServiceProviderList = () => {
                                     />
                                     <div className="icon-after">Search</div>
                                 </div>
-                                <div style={{cursor : "pointer"}} className="button-small-v">
+                                <div
+                                    style={{ cursor: "pointer" }}
+                                    className="button-small-v"
+                                >
                                     <div
                                         className="text-wrapper-2"
                                         style={{ width: "auto" }}
@@ -103,7 +136,9 @@ const ServiceProviderList = () => {
                                             <div className="frame-10">
                                                 <div className="text-field-large">
                                                     <div className="div-2">
-                                                        <label htmlFor="options">Choose an option:</label>
+                                                        <label htmlFor="options">
+                                                            Choose an option:
+                                                        </label>
                                                         <img
                                                             className="img-2"
                                                             alt="Icon map"
@@ -243,7 +278,7 @@ const ServiceProviderList = () => {
                                     Featured Venues
                                 </div>
                                 <div className="button-button">
-                                    <div className="active-2">Explore All</div>
+                                    <div className="active-2" style={{cursor : "pointer"}}>Explore All</div>
                                     <img
                                         className="img"
                                         alt="Icon v arrow"
@@ -252,442 +287,54 @@ const ServiceProviderList = () => {
                                 </div>
                             </div>
                             <div className="filter-button">
-                                <div className="weddings-receptions">
-                                    Weddings &amp; Receptions
+                                <div
+                                    className={currServiceProviderListType=="hall" ? 'weddings-receptions' : 'text-wrapper-4'}
+                                    onClick={() =>
+                                        handleServiceTypeChange("hall")
+                                    }
+                                    style={{cursor : "pointer"}}
+                                >
+                                    Weddings &amp; Birthday Halls
                                 </div>
-                                <div className="text-wrapper-4">
-                                    Corporate Events
+                                
+                                <div
+                                    className={currServiceProviderListType=="catering" ? 'weddings-receptions' : 'text-wrapper-4'}
+                                    onClick={() => {
+                                        handleServiceTypeChange("catering");
+                                    }}
+                                    style={{cursor : "pointer"}}
+                                >
+                                    Catering
                                 </div>
-                                <div className="text-wrapper-4">
-                                    Birthday Parties
-                                </div>
-                                <div className="text-wrapper-4">
-                                    Workshops &amp; Seminars
-                                </div>
-                            </div>
-                        </div>
-                        <div className="frame-9">
-                            <div className="frame-18">
-                                <div className="card">
-                                    <img
-                                        className="image-2"
-                                        alt="Image"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/image-1@2x.png"
-                                    />
-                                    <div className="info-wrapper">
-                                        <div className="info">
-                                            <div className="location">
-                                                <img
-                                                    className="img"
-                                                    alt="Icon map"
-                                                    src="https://c.animaapp.com/1lNWFHbB/img/icon---map-2-5@2x.png"
-                                                />
-                                                <p className="element-ave">
-                                                    The Grand Imperial Banquet
-                                                    Hall
-                                                </p>
-                                            </div>
-                                            <div className="frame-19">
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <div className="icon" />
-                                                        <div className="element-bed-room">
-                                                            300 Guests
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <div className="icon-2" />
-                                                        <div className="element-bath">
-                                                            Parking: 50 cars
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Icon"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/icon----5@2x.png"
-                                                        />
-                                                        <div className="element-bed-room">
-                                                            5000 sq ft
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Iocn menu image"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/iocn---menu-image-5@2x.png"
-                                                        />
-                                                        <div className="element-bath-2">
-                                                            Advance: ₹2,100
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="frame-20">
-                                                <div className="button-style-small-2">
-                                                    <div className="text-wrapper-2">
-                                                        View Details
-                                                    </div>
-                                                </div>
-                                                <div className="element-2">
-                                                    ₹50,000
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card">
-                                    <img
-                                        className="image-2"
-                                        alt="Image"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/image-2@2x.png"
-                                    />
-                                    <div className="frame-21">
-                                        <div className="info">
-                                            <div className="location">
-                                                <img
-                                                    className="img"
-                                                    alt="Icon map"
-                                                    src="https://c.animaapp.com/1lNWFHbB/img/icon---map-2-1@2x.png"
-                                                />
-                                                <div className="element-ave">
-                                                    Celebration Corner
-                                                </div>
-                                            </div>
-                                            <div className="frame-19">
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <div className="icon-3" />
-                                                        <div className="element-bed-room">
-                                                            500 Guests
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <div className="icon-4" />
-                                                        <div className="element-bath-3">
-                                                            Parking: 30 Cars
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Icon"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/icon----5@2x.png"
-                                                        />
-                                                        <div className="element-bed-room">
-                                                            3,200 sq ft
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Iocn menu image"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/iocn---menu-image-5@2x.png"
-                                                        />
-                                                        <div className="element-bath-4">
-                                                            Advance: ₹1,575
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="frame-20">
-                                                <div className="button-style-small-2">
-                                                    <div className="text-wrapper-2">
-                                                        View Details
-                                                    </div>
-                                                </div>
-                                                <div className="element-2">
-                                                    ₹60,000
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card">
-                                    <img
-                                        className="image-2"
-                                        alt="Image"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/image-3@2x.png"
-                                    />
-                                    <div className="info-wrapper">
-                                        <div className="info">
-                                            <div className="location">
-                                                <img
-                                                    className="img"
-                                                    alt="Icon map"
-                                                    src="https://c.animaapp.com/1lNWFHbB/img/icon---map-2-5@2x.png"
-                                                />
-                                                <div className="element-ave">
-                                                    Elite Party Venue
-                                                </div>
-                                            </div>
-                                            <div className="frame-19">
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <div className="icon-3" />
-                                                        <div className="element-bed-room">
-                                                            700 Guests
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <div className="icon-4" />
-                                                        <div className="element-bath-5">
-                                                            Parking: 100 Cars
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Icon"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/icon----5@2x.png"
-                                                        />
-                                                        <div className="element-bed-room">
-                                                            7,000 sq ft
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Iocn menu image"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/iocn---menu-image-5@2x.png"
-                                                        />
-                                                        <div className="element-bath">
-                                                            Advance: ₹3,570
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="frame-20">
-                                                <div className="button-style-small-2">
-                                                    <div className="text-wrapper-2">
-                                                        View Details
-                                                    </div>
-                                                </div>
-                                                <div className="element-2">
-                                                    ₹90,000
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="frame-18">
-                                <div className="card">
-                                    <img
-                                        className="image-2"
-                                        alt="Image"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/image-4@2x.png"
-                                    />
-                                    <div className="info-wrapper">
-                                        <div className="info">
-                                            <div className="location">
-                                                <img
-                                                    className="img"
-                                                    alt="Icon map"
-                                                    src="https://c.animaapp.com/1lNWFHbB/img/icon---map-2-5@2x.png"
-                                                />
-                                                <div className="element-ave">
-                                                    {" "}
-                                                    Crystal Lake Pavilion
-                                                </div>
-                                            </div>
-                                            <div className="frame-19">
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <div className="icon-3" />
-                                                        <div className="element-bed-room">
-                                                            250 Guests
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <div className="icon-4" />
-                                                        <div className="element-bath-6">
-                                                            Parking: 80 Cars
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Icon"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/icon----5@2x.png"
-                                                        />
-                                                        <div className="element-bed-room">
-                                                            4,500 sq ft
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Iocn menu image"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/iocn---menu-image-5@2x.png"
-                                                        />
-                                                        <div className="element-bath-7">
-                                                            Advance:&nbsp;&nbsp;₹1,925
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="frame-20">
-                                                <div className="button-style-small-2">
-                                                    <div className="text-wrapper-2">
-                                                        View Details
-                                                    </div>
-                                                </div>
-                                                <div className="element-2">
-                                                    ₹60,000
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card">
-                                    <img
-                                        className="image-2"
-                                        alt="Image"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/image-5@2x.png"
-                                    />
-                                    <div className="info-wrapper">
-                                        <div className="info">
-                                            <div className="location">
-                                                <img
-                                                    className="img"
-                                                    alt="Icon map"
-                                                    src="https://c.animaapp.com/1lNWFHbB/img/icon---map-2-5@2x.png"
-                                                />
-                                                <div className="element-ave">
-                                                    Corporate Nexus Hall
-                                                </div>
-                                            </div>
-                                            <div className="frame-19">
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <div className="icon-3" />
-                                                        <div className="element-bed-room">
-                                                            500 Guests
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <div className="icon-4" />
-                                                        <div className="element-bath-6">
-                                                            Parking: 60 Cars
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Icon"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/icon----5@2x.png"
-                                                        />
-                                                        <div className="element-bed-room">
-                                                            5,200 sq ft
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Iocn menu image"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/iocn---menu-image-5@2x.png"
-                                                        />
-                                                        <div className="element-bath-6">
-                                                            Advance: ₹2,000
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="frame-20">
-                                                <div className="button-style-small-2">
-                                                    <div className="text-wrapper-2">
-                                                        View Details
-                                                    </div>
-                                                </div>
-                                                <div className="element-2">
-                                                    ₹70,000
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="card">
-                                    <img
-                                        className="image-2"
-                                        alt="Image"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/image-6@2x.png"
-                                    />
-                                    <div className="info-wrapper">
-                                        <div className="info">
-                                            <div className="location">
-                                                <img
-                                                    className="img"
-                                                    alt="Icon map"
-                                                    src="https://c.animaapp.com/1lNWFHbB/img/icon---map-2-5@2x.png"
-                                                />
-                                                <div className="element-ave">
-                                                    Eternal Moments Hall
-                                                </div>
-                                            </div>
-                                            <div className="frame-19">
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <div className="icon-3" />
-                                                        <div className="element-bed-room">
-                                                            200 Guests
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <div className="icon-4" />
-                                                        <div className="element-bath-3">
-                                                            Parking :30 Cars
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="div">
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Icon"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/icon----5@2x.png"
-                                                        />
-                                                        <div className="element-bed-room">
-                                                            3,500 sq ft
-                                                        </div>
-                                                    </div>
-                                                    <div className="div-4">
-                                                        <img
-                                                            className="img-2"
-                                                            alt="Iocn menu image"
-                                                            src="https://c.animaapp.com/1lNWFHbB/img/iocn---menu-image-5@2x.png"
-                                                        />
-                                                        <div className="element-bath-8">
-                                                            Advance: ₹1,300
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="frame-20">
-                                                <div className="button-style-small-2">
-                                                    <div className="text-wrapper-2">
-                                                        View Details
-                                                    </div>
-                                                </div>
-                                                <div className="element-2">
-                                                    ₹40,000
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div
+                                    className={currServiceProviderListType=="balloon_decorator" ? 'weddings-receptions' : 'text-wrapper-4'}
+                                    onClick={() => {
+                                        handleServiceTypeChange(
+                                            "balloon_decorator"
+                                        );
+                                    }}
+                                    style={{cursor : "pointer"}}
+                                >
+                                    Ballon Decorators
                                 </div>
                             </div>
                         </div>
+                        <CardList></CardList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
                 <div className="feature">
@@ -1038,7 +685,7 @@ const ServiceProviderList = () => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div>}
         </>
     );
 };

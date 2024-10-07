@@ -6,14 +6,15 @@ const {
 
 
 const addServiceProvider = async (req, res) => {
-    const { username, email, password, serviceDetails } = req.body;
+    const { username,phoneNumber, email, password, serviceDetails } = req.body;
 
     try {
         // Create and save the ServiceProvider first
         const newServiceProvider = new ServiceProvider({
             username,
             email,
-            password, // You should hash the password before storing it in production
+            password,
+            phoneNumber // You should hash the password before storing it in production
         });
 
         // Save the ServiceProvider

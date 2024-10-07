@@ -5,6 +5,7 @@ const registeringServiceProviderSlice = createSlice({
     initialState: {
         username: "",
         email: "",
+        phoneNumber : "",
         password: "",
         totalServiceLength: null,
         serviceTypes: [],
@@ -17,17 +18,19 @@ const registeringServiceProviderSlice = createSlice({
             state.serviceTypes.shift();  // Removes the first element from state.serviceTypes
         },
         handleInitialRegistration: (state, action) => {
-            const { username, email, password ,serviceTypes} = action.payload;
+            const { username, email,phoneNumber, password ,serviceTypes} = action.payload;
             console.log( username, email, password ,serviceTypes)
             state.username = username;
             state.email = email;
             state.password = password;
+            state.phoneNumber = phoneNumber;
             state.serviceTypes = serviceTypes;
         },
         handleClearRegisteringDetails : (state)=>{
             state.username = "";
             state.email = "";
             state.password = "";
+            state.phoneNumber = "";
             state.totalServiceLength = null;
             state.serviceTypes = [];
             state.serviceDetails = [];

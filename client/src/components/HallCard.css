@@ -1,0 +1,90 @@
+.hall-card {
+  font-size: 60px; /* Increased font size */
+}
+
+.hall-card .image {
+  max-width: 100%; /* Ensure the image doesn't overflow */
+  object-fit: cover;
+}
+
+.hall-card .frame {
+  align-items: flex-start;
+  background-color: #fff9f6;
+  border: 1px solid #ecd6c8;
+  border-radius: 0px 0px 10px 10px; /* Only round the bottom corners */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 30px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.hall-card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  width: 100%;
+}
+
+.hall-card .location {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.hall-card .icon-map {
+  height: 24px;
+  width: 24px;
+}
+
+.hall-card .element-ave {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 20px; /* Increased font size */
+  font-weight: 700; /* Increased font weight */
+}
+
+.hall-card .details {
+  color: #626262;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px; /* Increased font size */
+  line-height: 22px;
+}
+
+.hall-card .frame-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Add a gap to avoid elements overlapping */
+  flex-wrap: wrap; /* Allows content to wrap if there's not enough space */
+}
+
+.hall-card .button-style-small {
+  background-color: #191919;
+  border-radius: 10px;
+  padding: 16px 24px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px; /* Increased font size */
+}
+
+.hall-card .element {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 28px; /* Increased font size */
+  background-color: #fff9f6;
+  font-weight: 700;
+  padding: 8px 16px; /* Add padding for a better look */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides overflow if text exceeds container */
+  text-overflow: ellipsis; /* Adds '...' if text overflows */
+}
+
+.grid-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 10px;
+}

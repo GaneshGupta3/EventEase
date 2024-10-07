@@ -8,6 +8,7 @@ const UserRegister = () => {
     const username = useRef();
     const email = useRef();
     const password = useRef();
+    const number = useRef();
     const navigate = useNavigate();
 
     const handleRegister = async (event) => {
@@ -16,9 +17,10 @@ const UserRegister = () => {
         const currUsername = username.current.value;
         const currEmail = email.current.value;
         const currPassword = password.current.value;
+        const currNumber = number.current.value;
 
         // Basic form validation
-        if (!currUsername || !currEmail || !currPassword) {
+        if (!currUsername || !currEmail || !currNumber || !currPassword) {
             alert("Please fill all fields!");
             return;
         }
@@ -32,6 +34,7 @@ const UserRegister = () => {
                 username: currUsername,
                 email: currEmail,
                 password: currPassword,
+                phoneNumber : currNumber
             }),
         });
         const data = await registerResponse.json();
@@ -104,6 +107,17 @@ const UserRegister = () => {
                                                     ref={password}
                                                     className="Input"
                                                     placeholder="enter your password"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="text-field-large">
+                                            <div className="frame-5">
+                                                <MdOutlineMail size={25} />
+                                                <input
+                                                    type="text"
+                                                    ref={number}
+                                                    className="Input"
+                                                    placeholder="enter your number"
                                                 />
                                             </div>
                                         </div>

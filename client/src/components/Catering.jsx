@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { SignInCircleLight } from "./SignInCircleLight";
-import "./hall.css";
+import "./hallRegister.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registeringServiceProviderActions } from "../store/registeringServiceProvider";

@@ -13,7 +13,7 @@ const getUsers = async (req, res) => {
 };
 
 const addUser = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password,phoneNumber } = req.body;
   const existingUseremail = await User.findOne({ email: email });
   const existingUsername = await User.findOne({ username: username });
 
@@ -31,7 +31,7 @@ const addUser = async (req, res) => {
 
   try {
     // Create a new user instance
-    const newUser = new User({ username, email, password });
+    const newUser = new User({ username, email, password,phoneNumber });
 
     // Save the user to the database
     await newUser.save();

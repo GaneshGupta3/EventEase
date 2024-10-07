@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { SignInCircleLight } from "./SignInCircleLight";
-import "./hall.css";
+import "./hallRegister.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registeringServiceProviderActions } from "../store/registeringServiceProvider";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { PiMapPinAreaDuotone } from "react-icons/pi";
 
-const Hall = () => {
+const HallRegister = () => {
     const locations = useRef(); // Add a separate ref for locations
     const guests = useRef();
     const parkingNumber = useRef();
@@ -226,4 +226,4 @@ const Hall = () => {
     );
 };
 
-export default Hall;
+export default HallRegister;

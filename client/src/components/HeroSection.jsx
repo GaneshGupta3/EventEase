@@ -7,9 +7,8 @@ import FigmaServiceProviderCard from "./FigmaCard";
 const HeroSection = () => {
     const navigate = useNavigate();
     const location = useRef();
-    const eventType =useRef();
+    const serviceType =useRef();
     const budget =useRef();
-    const serviceType = useRef();
     const handleLoginButtonClick = (e)=>{
         e.preventDefault();
         navigate("/user/login");
@@ -52,6 +51,9 @@ const HeroSection = () => {
     const handleServiceTypeChange = ()=> {
         
     }
+    const handleAboutUs = ()=>{
+        navigate("/aboutUs");
+    }
 
 
 
@@ -64,15 +66,8 @@ const HeroSection = () => {
                             <div className="frame-wrapper">
                                 <div className="frame-2" />
                             </div>
-                            <div className="frame-3">
-                                <div className="frame-4">
-                                    <div className="text-wrapper">Home</div>
-                                    <img
-                                        className="icon-arrow-down"
-                                        alt="Icon arrow down"
-                                        src="https://c.animaapp.com/1lNWFHbB/img/icon---16px---arrow---down.svg"
-                                    />
-                                </div>
+                            <div className="frame-3" style={{cursor : "pointer"}}>
+                                
                                 <div className="frame-4">
                                     <div className="text-wrapper">Venue</div>
                                     <img
@@ -89,7 +84,7 @@ const HeroSection = () => {
                                         src="https://c.animaapp.com/1lNWFHbB/img/icon---16px---arrow---down-2.svg"
                                     />
                                 </div>
-                                <div className="property">About us</div>
+                                <div className="property" onClick={handleAboutUs}>About us</div>
                                 <div className="text-wrapper">Blog</div>
                             </div>
                             <div className="frame-5">
@@ -145,7 +140,7 @@ const HeroSection = () => {
                                                 </div>
                                                 <div className="text-field-large">
                                                     <div className="div-2">
-                                                        <input className="default" ref={eventType} placeholder="Event Type" />
+                                                        <input className="default" ref={serviceType} placeholder="Service type" />
                                                             
                                                         <img
                                                             className="img-2"
@@ -963,7 +958,7 @@ const HeroSection = () => {
                                     </a>
                                     <div className="frame-37">
                                         <div className="element-info">
-                                            ++91 87797 06761
+                                            +91 87797 06761
                                         </div>
                                         <div className="element-info-2">
                                             2022.ganesh.gupta@ves.ac.in

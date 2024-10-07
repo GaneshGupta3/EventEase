@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Confirm = () => {
 
     const navigate = useNavigate();
-    const { username, email, password, serviceDetails, serviceTypes } =
+    const { username, email,phoneNumber, password, serviceDetails } =
         useSelector((store) => store.registeringServiceProvider);
     const handleConfirmClicked = async () => {
         const registerResponse = await fetch(
@@ -18,6 +18,7 @@ const Confirm = () => {
                 body: JSON.stringify({
                     username: username,
                     email: email,
+                    phoneNumber : phoneNumber,
                     password: password,
                     serviceDetails: serviceDetails,
                 }),

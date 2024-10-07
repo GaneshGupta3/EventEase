@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { registeringServiceProviderActions } from "../store/registeringServiceProvider";
 import BalloonDecorator from "./BalloonDecorator";
 import Catering from "./Catering";
-import Hall from "./hall";
 import "./ServiceProviderRegister.css";
+import HallRegister from "./hallRegister";
 
 const ServiceDetails = () => {
     const locations = useRef(); // Add a separate ref for locations
@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const advanceBooking = useRef();
     const totalCost = useRef();
     const navigate = useNavigate();
-    const { username, email, password, serviceDetails, serviceTypes } =
+    const { username, email,phoneNumber, password, serviceDetails, serviceTypes } =
         useSelector((store) => store.registeringServiceProvider);
     const dispatch = useDispatch();
 
@@ -89,7 +89,7 @@ const ServiceDetails = () => {
     };
     return (
         <>
-            {serviceTypes[0]=="hall" && <Hall />}
+            {serviceTypes[0]=="hall" && <HallRegister />}
             {serviceTypes[0]=="balloon_decorator" && <BalloonDecorator />}
             {serviceTypes[0]=="catering" && <Catering />}
         </>

@@ -13,6 +13,11 @@ const ServiceProviderSchema = new mongoose.Schema(
             required: true,
             match: [/.+\@.+\..+/, 'Please fill a valid email address']
         },
+        phoneNumber: {
+            type: String,
+            unique: true,
+            required: true,
+        },
         password: {
             required: true,
             type: String
