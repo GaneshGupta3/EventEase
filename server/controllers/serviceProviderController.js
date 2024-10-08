@@ -57,6 +57,21 @@ const addServiceProvider = async (req, res) => {
             if(service.maximumLandCoverage){
                 serviceDoc.maximumLandCoverage = service.maximumLandCoverage;
             }
+            if(service.vegMenu){
+                serviceDoc.vegMenu = service.vegMenu;
+            }
+            if(service.nonvegMenu){
+                serviceDoc.nonvegMenu = service.nonvegMenu;
+            }
+            if(service.cameraDetails){
+                serviceDoc.cameraDetails = service.cameraDetails;
+            }
+            if(service.costPerPhoto){
+                serviceDoc.costPerPhoto = service.costPerPhoto;
+            }
+            if(service.photoMaterial){
+                serviceDoc.photoMaterial = service.photoMaterial;
+            }
             return serviceDoc; // Return the constructed serviceDoc object
         });
 

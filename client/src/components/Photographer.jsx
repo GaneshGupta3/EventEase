@@ -1,25 +1,23 @@
 import React, { useRef } from "react";
-import { SignInCircleLight } from "./SignInCircleLight";
-import "./hallRegister.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { registeringServiceProviderActions } from "../store/registeringServiceProvider";
-import { MdOutlineAttachMoney } from "react-icons/md";
-import { PiMapPinAreaDuotone } from "react-icons/pi";
-import { FaPlateWheat } from "react-icons/fa6";
 import { BiFoodTag } from "react-icons/bi";
+import { FaRupeeSign } from "react-icons/fa";
+import { FaPlateWheat } from "react-icons/fa6";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
 import { SlNote } from "react-icons/sl";
-import { FaRupeeSign } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { registeringServiceProviderActions } from "../store/registeringServiceProvider";
+import { IoMdFilm } from "react-icons/io";
+import { FaCamera } from "react-icons/fa";
+import { FaImage } from "react-icons/fa6";
+import "./hallRegister.css";
 
-const Catering = () => {
+const Photographer = () => {
     const locations = useRef();
-    const foodHours = useRef();
+    const photoMaterial = useRef();
+    const cameraDetails = useRef();
+    const costPerPhoto = useRef();
     const advanceBooking = useRef();
-    const costPerPlate = useRef();
-    const totalCost = useRef();
-    const menu = useRef();
-    const foodType = useRef();
     const navigate = useNavigate();
     const { serviceTypes } = useSelector((store) => store.registeringServiceProvider);
     const dispatch = useDispatch();
@@ -27,27 +25,21 @@ const Catering = () => {
     const handleContinue = async (event) => {
         event.preventDefault();
         const currLocations = locations.current.value.toLowerCase().split(",");
-        const currFoodHours = foodHours.current.value;
-        const currAdvanceBooking = advanceBooking.current.value;
-        const currCostPerPlate = costPerPlate.current.value;
-        const currFoodType = foodType.current.value; // Corrected here
-        const currMenu = menu.current.value.split(","); // Change to split by comma
-        if(!currLocations || !currFoodHours ||!currAdvanceBooking ||!currCostPerPlate || !currFoodType || !currMenu ){
+        const currPhotoMaterial = photoMaterial.current.value;
+        const currCameraDetails = cameraDetails.current.value;
+        const currCostPerPhoto = costPerPhoto.current.value;
+        const currAdvanceBooking = advanceBooking.current.value; // Change to split by comma
+        if(!currLocations || !currPhotoMaterial ||!currCameraDetails ||!currCostPerPhoto ){
             return alert("please fill all the fields");
         }
         const serviceDetailsObjects = {
             serviceName: serviceTypes[0],
             locations: currLocations,
-            foodHours: currFoodHours,
-            advanceBooking: currAdvanceBooking,
-            costPerPlate: currCostPerPlate,
+            photoMaterial: currPhotoMaterial,
+            cameraDetails: currCameraDetails,
+            costPerPhoto: currCostPerPhoto,
+            advanceBooking : currAdvanceBooking
         };
-        
-        if (currFoodType === "veg") {
-            serviceDetailsObjects.vegMenu = currMenu;
-        } else {
-            serviceDetailsObjects.nonvegMenu = currMenu;
-        }
         
         console.log(serviceDetailsObjects);
         
@@ -59,10 +51,10 @@ const Catering = () => {
         
         // Clear inputs
         locations.current.value = "";
-        foodHours.current.value = "";
-        advanceBooking.current.value = "";
-        costPerPlate.current.value = "";
-        menu.current.value = ""; // Clear menu input
+        photoMaterial.current.value = "";
+        cameraDetails.current.value = "";
+        costPerPhoto.current.value = "";
+        advanceBooking.current.value = ""; // Clear advanceBooking input
     };
     
     const handleCancel = (e) => {
@@ -76,28 +68,22 @@ const Catering = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         const currLocations = locations.current.value.toLowerCase().split(",");
-        const currFoodHours = foodHours.current.value;
-        const currAdvanceBooking = advanceBooking.current.value;
-        const currCostPerPlate = costPerPlate.current.value;
-        const currFoodType = foodType.current.value; // Corrected here
-        const currMenu = menu.current.value.split(","); // Change to split by comma
+        const currPhotoMaterial = photoMaterial.current.value;
+        const currCameraDetails = cameraDetails.current.value;
+        const currCostPerPhoto = costPerPhoto.current.value;
+        const currAdvanceBooking = advanceBooking.current.value; // Change to split by comma
         
-        if(!currLocations || !currFoodHours ||!currAdvanceBooking ||!currCostPerPlate || !currFoodType || !currMenu ){
+        if(!currLocations || !currPhotoMaterial ||!currCameraDetails ||!currCostPerPhoto  ){
             return alert("please fill all the fields");
         }
         const serviceDetailsObjects = {
             serviceName: serviceTypes[0],
             locations: currLocations,
-            foodHours: currFoodHours,
-            advanceBooking: currAdvanceBooking,
-            costPerPlate: currCostPerPlate,
+            photoMaterial: currPhotoMaterial,
+            cameraDetails: currCameraDetails,
+            costPerPhoto: currCostPerPhoto,
+            advanceBooking : currAdvanceBooking
         };
-
-        if (currFoodType === "veg") {
-            serviceDetailsObjects.vegMenu = currMenu;
-        } else if (currFoodType === "non-veg") { // Ensure this matches your select options
-            serviceDetailsObjects.nonvegMenu = currMenu;
-        }
 
         console.log(serviceDetailsObjects);
         dispatch(
@@ -108,10 +94,10 @@ const Catering = () => {
 
         // Clear inputs
         locations.current.value = "";
-        foodHours.current.value = "";
+        photoMaterial.current.value = "";
+        cameraDetails.current.value = "";
+        costPerPhoto.current.value = "";
         advanceBooking.current.value = "";
-        costPerPlate.current.value = "";
-        menu.current.value = ""; // Clear menu input
         navigate("/serviceProvider/confirm");
     };
 
@@ -124,7 +110,7 @@ const Catering = () => {
                             <div className="frame-3">
                                 <div className="frame-4">
                                     <div className="request-for-visit">
-                                        Catering Service
+                                        Photography Service
                                     </div>
                                     <img
                                         onClick={handleCancel}
@@ -151,31 +137,32 @@ const Catering = () => {
                                     <div className="labels">
                                         <div className="text-field-large">
                                             <div className="frame-5">
-                                                <MdOutlineAccessTimeFilled size={30} />
+                                                <IoMdFilm size={30}/>
+                                                <select ref={photoMaterial} className="default">
+                                                  <option value="">Select Material Type</option>
+                                                  <option value="films">Photographic Films</option>
+                                                  <option value="plates">Photographic plates</option>
+                                                  <option value="paper">Photographic paper</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div className="text-field-large">
+                                            <div className="frame-5">
+                                            <FaCamera size={30}/>
                                                 <input
-                                                    ref={foodHours}
-                                                    placeholder="Food Hours in the event"
                                                     className="default"
+                                                    ref={cameraDetails}
+                                                    placeholder="Camera Details"
                                                 />
                                             </div>
                                         </div>
                                         <div className="text-field-large">
                                             <div className="frame-5">
-                                                <FaRupeeSign size={30} />
+                                                <FaImage size={30}/>
                                                 <input
+                                                    ref={costPerPhoto}
                                                     className="default"
-                                                    ref={advanceBooking}
-                                                    placeholder="Advance Payment"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="text-field-large">
-                                            <div className="frame-5">
-                                                <FaPlateWheat size={30} />
-                                                <input
-                                                    ref={costPerPlate}
-                                                    className="default"
-                                                    placeholder="Cost Per Plate"
+                                                    placeholder="Cost Per Photo"
                                                 />
                                             </div>
                                         </div>
@@ -183,21 +170,11 @@ const Catering = () => {
                                 </div>
                                 <div className="text-field-large">
                                     <div className="frame-5">
-                                        <BiFoodTag size={30} />
-                                        <select ref={foodType} className="default">
-                                            <option value="">Select Food Type</option>
-                                            <option value="veg">Vegetarian</option>
-                                            <option value="non-veg">Non-Vegetarian</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="text-field-large">
-                                    <div className="frame-5">
-                                        <SlNote size={30} />
+                                    <FaRupeeSign size={30}/>
                                         <input
                                             className="default"
-                                            ref={menu}
-                                            placeholder={`Menu separated by comma`}
+                                            ref={advanceBooking}
+                                            placeholder={`Advance Booking`}
                                         />
                                     </div>
                                 </div>
@@ -248,4 +225,4 @@ const Catering = () => {
     );
 };
 
-export default Catering;
+export default Photographer;

@@ -5,8 +5,15 @@ import { TbCoinRupeeFilled } from "react-icons/tb";
 import { FaCarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { userActions } from "../store/user";
 
 export const BalloonDecoratorCard = ({ serviceProvider }) => {
+    const dispatch = useDispatch();
+    const handleViewDetails = (e) => {
+        e.preventDefault();
+        dispatch(userActions.viewDetailsClicked({ serviceProvider: serviceProvider }));
+      };
     return (
         <div className="hall-card">
             <img
@@ -43,7 +50,7 @@ export const BalloonDecoratorCard = ({ serviceProvider }) => {
                     </div>
                     <div className="frame-3">
                         <div className="button-style-small">
-                            <div className="text-wrapper-2">View Details</div>
+                            <div className="text-wrapper-2" onClick={handleViewDetails}>View Details</div>
                         </div>
                     </div>
                 </div>

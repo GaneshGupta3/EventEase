@@ -7,7 +7,7 @@ const BalloonDecoratorList = () => {
   const {currentServiceProviderList} = useSelector(store => store.user);
   return (
     <div className={styles.balloonDecoratorCardContainer}>
-      {currentServiceProviderList.map((serviceProvider)=>{return <BalloonDecoratorCard key={serviceProvider.serviceProvider} serviceProvider = {serviceProvider}/>})}
+      {currentServiceProviderList.map((serviceProvider)=>{return <BalloonDecoratorCard key={serviceProvider._id} serviceProvider = {serviceProvider}/>})}
     </div>
   )
 }

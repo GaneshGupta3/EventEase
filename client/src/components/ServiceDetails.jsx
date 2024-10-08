@@ -6,6 +6,7 @@ import BalloonDecorator from "./BalloonDecorator";
 import Catering from "./Catering";
 import "./ServiceProviderRegister.css";
 import HallRegister from "./hallRegister";
+import Photographer from "./Photographer";
 
 const ServiceDetails = () => {
     const locations = useRef(); // Add a separate ref for locations
@@ -92,6 +93,8 @@ const ServiceDetails = () => {
             {serviceTypes[0]=="hall" && <HallRegister />}
             {serviceTypes[0]=="balloon_decorator" && <BalloonDecorator />}
             {serviceTypes[0]=="catering" && <Catering />}
+            {serviceTypes[0]=="photographer" && <Photographer />}
+
         </>
     );
 };

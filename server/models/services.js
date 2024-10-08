@@ -56,7 +56,17 @@ const serviceSchema = new mongoose.Schema(
     },
     nonvegMenu:{
       type : [String]
-    }
+    },
+    cameraDetails: {
+      type : String
+    },
+    costPerPhoto: {
+      type : String
+    },
+    photoMaterial: {
+      type: String
+    },
+    
   },
   { timestamps: true } // Optionally add timestamps for createdAt and updatedAt
 );

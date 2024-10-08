@@ -6,6 +6,7 @@ import "./styles.css";
 import { userActions } from "../store/user";
 import CardList from "./CardList";
 import ViewDetailsHall from "./ViewDetailsHall";
+import ViewDetails from "./ViewDetails";
 
 const ServiceProviderList = () => {
     const navigate = useNavigate();
@@ -54,7 +55,7 @@ const ServiceProviderList = () => {
     return (
         <>
             
-            {currServiceProvider ? (<ViewDetailsHall />): <div className="landing-page">
+            {currServiceProvider ? (<ViewDetails />): <div className="landing-page">
                 <div className="frame">
                     <div className="header-header">
                         <div className="div">
@@ -576,7 +577,7 @@ const ServiceProviderList = () => {
                                     </a>
                                     <div className="frame-37">
                                         <div className="element-info">
-                                            ++91 87797 06761
+                                            +91 87797 06761
                                         </div>
                                         <div className="element-info-2">
                                             2022.ganesh.gupta@ves.ac.in
@@ -589,96 +590,7 @@ const ServiceProviderList = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="frame-38">
-                                <div className="div-5">
-                                    <div className="text-wrapper-8">
-                                        Explore
-                                    </div>
-                                    <div className="frame-39">
-                                        <div className="home-home">
-                                            View Halls
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Catering Services
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Event Planners
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Decor and Lighting
-                                        </div>
-                                        <div className="home-home-2">
-                                            Entertainment Services
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="div-5">
-                                    <div className="text-wrapper-8">
-                                        Book Now
-                                    </div>
-                                    <div className="frame-39">
-                                        <div className="home-home">
-                                            Available Halls
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Service Packages
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Book Event Spaces
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Payment Portal
-                                        </div>
-                                        <div className="home-home-3">
-                                            Booking Confirmation
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="div-5">
-                                    <div className="text-wrapper-8">
-                                        Account
-                                    </div>
-                                    <div className="frame-40">
-                                        <div className="home-home">
-                                            Login / Sign Up
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            My Bookings
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Pay Advance
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Track Payment
-                                        </div>
-                                        <div className="home-home-4">
-                                            Reset Password
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="frame-41">
-                                    <div className="text-wrapper-8">
-                                        Customer Support
-                                    </div>
-                                    <div className="frame-39">
-                                        <div className="home-home">
-                                            Contact us
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            FAQ’s
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Booking Policy
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Payment Policies
-                                        </div>
-                                        <div className="home-v-home-v">
-                                            Terms and Conditions
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <p className="static-mania">
                             © 2024. All rights reserved.
