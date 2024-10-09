@@ -3,7 +3,7 @@ import React from 'react'
 function SearchHalls() {
   return <>
   <h1>
-    nikam
+    ganesh
   </h1>
   
   </>
