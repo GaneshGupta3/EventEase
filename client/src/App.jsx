@@ -1,17 +1,17 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HeroSection from "./components/HeroSection";
 import { useSelector } from "react-redux";
+import "../global.css";
+import "./App.css";
+import SelectedServiceProvider from "./components/SelectedServiceProvider";
 import ServiceProviderList from "./components/SerivceProviderList";
 import UserList from "./components/UserList";
 import UserSelected from "./components/UserSelected";
-import SelectedServiceProvider from "./components/SelectedServiceProvider";
+
+import { Outlet } from "react-router-dom";
 
 function App() {
-    const {userLoggedIn , serviceProviderSelected} = useSelector((store) => store.user);
-    const { serviceProviderLoggedIn, userSelected } = useSelector(
-        (store) => store.serviceProvider
-    );
+    const { userLoggedIn, serviceProviderSelected } = useSelector((store) => store.user);
+    const { serviceProviderLoggedIn, userSelected } = useSelector((store) => store.serviceProvider);
     const userType = useSelector((store) => store.generalUser.userType);
 
     return (
@@ -29,13 +29,12 @@ function App() {
                             <UserList />
                         )
                     ) : (
-                        <HeroSection />
+                        <Outlet />  // Nested routes like UserLogin will render here
                     )}
                 </>
             )}
         </>
     );
-    
 }
 
 export default App;

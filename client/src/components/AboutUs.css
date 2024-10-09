@@ -1,0 +1,696 @@
+.about-us {
+  align-items: center;
+  background-color: #ffffff;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-us .header-header {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 80.12px;
+  justify-content: space-around;
+  padding: 19px 120px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-wrapper {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 11px;
+  position: relative;
+}
+
+.about-us .div {
+  background-image: url(https://c.animaapp.com/gw9BBciN/img/frame-34@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+  width: 135.43px;
+}
+
+.about-us .frame-2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 492px;
+}
+
+.about-us .frame-3 {
+  align-items: flex-start;
+  display: flex;
+  gap: 6px;
+  position: relative;
+  width: 77px;
+}
+
+.about-us .text-wrapper {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.about-us .icon-arrow-down {
+  height: 16px;
+  position: relative;
+  width: 16px;
+}
+
+.about-us .text-wrapper-2 {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.about-us .frame-4 {
+  align-items: center;
+  display: flex;
+  gap: 40px;
+  height: 42px;
+  position: relative;
+  width: 228px;
+}
+
+.about-us .button-anchor-text {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 8px;
+  height: 24.01px;
+  position: relative;
+}
+
+.about-us .icon-search {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.about-us .icon-after {
+  color: #191919;
+  flex: 1;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 18px;
+  position: relative;
+}
+
+.about-us .button-small-v {
+  align-items: flex-start;
+  background-color: #191919;
+  border-radius: 10px;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 8px;
+  height: 42.01px;
+  padding: 13px 24px;
+  position: relative;
+}
+
+.about-us .text-wrapper-3 {
+  color: #ffffff;
+  flex: 1;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.about-us .div-wrapper {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  padding: 0px 120px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-5 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .title {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .reimagining-real {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -1.08px;
+  line-height: 75.6px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.about-us .on-the-other-hand-we {
+  color: #626262;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 32.4px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.about-us .frame-6 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-7 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .rectangle {
+  flex: 1;
+  flex-grow: 1;
+  height: 400px;
+  position: relative;
+}
+
+.about-us .img {
+  align-self: stretch;
+  position: relative;
+  width: 384px;
+}
+
+.about-us .number-count {
+  align-items: center;
+  align-self: stretch;
+  background-color: #fff9f5;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  padding: 50px 120px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-8 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .number-count-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  width: 225px;
+}
+
+.about-us .icon {
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 30px 30px #91aebb33;
+  height: 60px;
+  position: relative;
+  width: 60px;
+}
+
+.about-us .frame-9 {
+  height: 32px;
+  left: 14px;
+  position: absolute;
+  top: 14px;
+  width: 32px;
+}
+
+.about-us .frame-10 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .text-wrapper-4 {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -0.92px;
+  line-height: 64.4px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.about-us .text-wrapper-5 {
+  align-self: stretch;
+  color: #406f85;
+  font-family: "Manrope", Helvetica;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 28px;
+  position: relative;
+}
+
+.about-us .icon-2 {
+  height: 60px;
+  position: relative;
+  width: 60px;
+}
+
+.about-us .bg {
+  background-color: #ffffff;
+  border-radius: 0.14px/0.81px;
+  box-shadow: 0px 30px 30px #91aebb33;
+  height: 2px;
+  left: 60px;
+  position: absolute;
+  top: 58px;
+  width: 1px;
+}
+
+.about-us .img-2 {
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.about-us .bg-2 {
+  background-color: #ffffff;
+  border-radius: 0.15px/0.81px;
+  box-shadow: 0px 30px 30px #91aebb33;
+  height: 2px;
+  left: 60px;
+  position: absolute;
+  top: 58px;
+  width: 1px;
+}
+
+.about-us .about-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  padding: 0px 120px 0px 170px;
+  position: relative;
+  width: 1440px;
+}
+
+.about-us .about {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 158px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .rectangle-2 {
+  flex: 1;
+  flex-grow: 1;
+  height: 589px;
+  position: relative;
+}
+
+.about-us .content {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 56px;
+  position: relative;
+}
+
+.about-us .frame-11 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .text-wrapper-6 {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.72px;
+  line-height: 50.4px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.about-us .lorem-ipsum-is {
+  align-self: stretch;
+  color: #626262;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 32.4px;
+  position: relative;
+}
+
+.about-us .footer-footer {
+  align-items: center;
+  align-self: stretch;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 489px;
+  justify-content: center;
+  padding: 80px 120px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-12 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 120px;
+  margin-bottom: -40.01px;
+  margin-top: -40.01px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-13 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-14 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  position: relative;
+  width: 341.67px;
+}
+
+.about-us .frame-15 {
+  align-items: center;
+  display: flex;
+  gap: 11px;
+  height: 40.01px;
+  position: relative;
+  width: 341.67px;
+}
+
+.about-us .frame-16 {
+  background-image: url(https://c.animaapp.com/gw9BBciN/img/frame-34-1@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+  width: 135.43px;
+}
+
+.about-us .frame-17 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 190px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .element-bervely-hill-ave {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 25.6px;
+  margin-top: -1px;
+  position: relative;
+  text-decoration: underline;
+}
+
+.about-us .frame-18 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.about-us .element-info {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 25.6px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.about-us .element-info-2 {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 25.6px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.about-us .social-media {
+  align-self: stretch;
+  flex: 0 0 auto;
+  margin-bottom: -29px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .frame-19 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 77px;
+  position: relative;
+}
+
+.about-us .div-2 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px;
+  position: relative;
+}
+
+.about-us .text-wrapper-7 {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.about-us .home-home {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.about-us .home-v-home-v {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+}
+
+.about-us .home-home-2 {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-right: -39.22px;
+  position: relative;
+  width: 190px;
+}
+
+.about-us .home-home-3 {
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-right: -23.22px;
+  position: relative;
+  width: 174px;
+}
+
+.about-us .frame-20 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 170px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us .home-home-4 {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-bottom: -5px;
+  position: relative;
+}
+
+.about-us .frame-21 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  width: 175px;
+}
+
+.about-us .static-mania {
+  align-self: stretch;
+  color: #191919;
+  font-family: "Manrope", Helvetica;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: relative;
+}

@@ -1,0 +1,9 @@
+hall balloon_decorator caterer            photographer           music_band    	        makeup_artist 				                       transport_proivder 	   invitation_designer                            entertainer
+                       1.locations        1.locations            1.locations		        1.locations					                         1.locations             1.material used                                 1.locations
+		                   2.foodHours        2.hard-copy material   2.performance duration 2.makeup type(glamarous,traditional,western) 2.vehicles available    2.studio name                                   2.duration of performance
+                                          3.camera details       3.advance		          3.tools used					                       3.charges per km.	     3.design styles(traditional,minimal,modern,etc.)3.type of entertainment
+                       3.veg or nonveg    4.cost/photo           4.playlist style	     4.experience in the field		 	               4.mid-travelling meals  4.cost/invitation                               4.advance
+                       4.veg dishes       5.advance              5.cost/hr                                                           5.capacity                                                              5.cost/hr
+                       5.nonveg dishes                                                                                                                                                  
+                       6.cost/plate                                                                                                                                                     
+		                   7.advance               

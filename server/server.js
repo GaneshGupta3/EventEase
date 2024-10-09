@@ -2,6 +2,7 @@ const express = require('express');
 const connectDB = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
 const serviceProviderRoutes = require('./routes/serviceProviderRoutes.js')
+const servicesRoutes = require('./routes/servicesRoute.js')
 // const authMiddleware = require('./middlewares/authMiddleware.js');
 const cors = require('cors');
 
@@ -21,6 +22,8 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 
 app.use('/api/serviceProvider',serviceProviderRoutes);
+
+app.use('/api/services',servicesRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;

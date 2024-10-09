@@ -1,0 +1,23 @@
+.lamp-light {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.lamp-light .overlap-group {
+  background-image: url(https://c.animaapp.com/tRsqlKbF/img/union-1.svg);
+  background-size: 100% 100%;
+  height: 18px;
+  left: 6px;
+  position: relative;
+  top: 4px;
+  width: 13px;
+}
+
+.lamp-light .ellipse {
+  height: 1px;
+  left: 4px;
+  position: absolute;
+  top: 13px;
+  width: 5px;
+}

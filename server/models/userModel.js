@@ -11,12 +11,17 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true 
   },
+  phoneNumber: {
+    type: String,
+    required: true,
+    unique: true
+  },
   password: {
     type: String,
     required: true,
   },
   bookedServices: [
-      {
+          {
           serviceProviderId: {
               type: mongoose.Schema.Types.ObjectId,
               ref: 'ServiceProvider', // Reference to ServiceProvider schema

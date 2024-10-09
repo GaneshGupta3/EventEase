@@ -1,56 +1,38 @@
 const mongoose = require("mongoose");
 
-// Define Service Schema
-const serviceSchema = new mongoose.Schema({
-    serviceName: {
-        type: String,
-        required: true,
-    }
-});
-
-// Define Service Provider Schema
 const ServiceProviderSchema = new mongoose.Schema(
     {
         username: {  
             type: String,
-            required: true,
-            unique: true // Ensure unique index is applied to "username", not "userName"
+            unique: true,
+            required: true
         },
         email: {
             type: String,
+            unique: true,
             required: true,
-            unique: true
+            match: [/.+\@.+\..+/, 'Please fill a valid email address']
+        },
+        phoneNumber: {
+            type: String,
+            unique: true,
+            required: true,
         },
         password: {
-            type: String,
-            required: true
+            required: true,
+            type: String
         },
-        services: [serviceSchema],
-        reviews: [
-            {
-                userId: {
-                    type: mongoose.Schema.Types.ObjectId,
-                    ref: 'User', // Reference to User schema
-                },
-                comment: {
-                    type: String,
-                },
-                rating: {
-                    type: Number,
-                    min: 1,
-                    max: 5,
-                },
-                createdAt: {
-                    type: Date,
-                    default: Date.now,
-                },
-            },
-        ],
     },
     { timestamps: true }
 );
 
-// Create the ServiceProvider model
+// Enforce the unique index at the database level for username and email
+ServiceProviderSchema.index({ username: 1 }, { unique: true });
+ServiceProviderSchema.index({ email: 1 }, { unique: true });
+
 const ServiceProvider = mongoose.model("ServiceProvider", ServiceProviderSchema);
+
+// Sync indexes to enforce unique constraints in the database
+ServiceProvider.syncIndexes();
 
 module.exports = ServiceProvider;
