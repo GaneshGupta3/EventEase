@@ -57,21 +57,13 @@ const ViewDetailsHall= () => {
           <div className="div-wrapper">
             <div className="frame-7">
               <div className="rectangle-wrapper">
-                <div className="rectangle" />
+                <img className="rectangle" src={currServiceProvider.path ? currServiceProvider.path : "../../hall10.jpeg"}/>
               </div>
               <div className="frame-8">
-                <div className="rectangle-2" />
+                <img className="rectangle-2" src={currServiceProvider.patha ? currServiceProvider.patha : "../../hall3a.jpg"}/>
                 <div className="frame-9">
-                  <div className="rectangle-2" />
+                  <img className="rectangle-2" src={currServiceProvider.pathb ? currServiceProvider.pathb : "../../hall3b.jpg"}/>
                   <div className="inf">
-                    <div className="innner">
-                      <img
-                        className="img"
-                        alt="Icon image"
-                        src="https://c.animaapp.com/N2aztpBp/img/icon---image@2x.png"
-                      />
-                      <div className="text-wrapper-3">3 more</div>
-                    </div>
                   </div>
                 </div>
               </div>

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import HallList from './HallList';
 import CateringList from './CateringList';
 import BalloonDecoratorList from './BalloonDecoratorList';
+import PhotoGrapherList from './PhotoGrapherList';
+import "./styles.css";
 
 const CardList = () => {
 
@@ -13,6 +15,7 @@ const CardList = () => {
       {currServiceProviderListType == "hall" && <HallList />}
       {currServiceProviderListType == "catering" && <CateringList />}
       {currServiceProviderListType == "balloon_decorator" && <BalloonDecoratorList />}
+      {currServiceProviderListType == "photographer" && <PhotoGrapherList />}
     </>
   )
 }

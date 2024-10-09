@@ -66,6 +66,9 @@ const addServiceProvider = async (req, res) => {
             if(service.cameraDetails){
                 serviceDoc.cameraDetails = service.cameraDetails;
             }
+            if(service.costPerPlate){
+                serviceDoc.costPerPlate = service.costPerPlate;
+            }
             if(service.costPerPhoto){
                 serviceDoc.costPerPhoto = service.costPerPhoto;
             }

@@ -16,6 +16,7 @@ const userSlice = createSlice({
         currBalloonDecoratorList: null,
         currHallList: null,
         allServices: [],
+        seeList : false,
     },
     reducers: {
         loggedIn: (state, action) => {
@@ -78,6 +79,9 @@ const userSlice = createSlice({
         },
         cancelViewDetails : (state ,action)=>{
             state.currServiceProvider = null;
+        },
+        toggleSeeList: (state)=>{
+            state.seeList ? state.seeList = false : state.seeList = true;
         }
     },
 });

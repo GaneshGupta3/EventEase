@@ -19,7 +19,7 @@ export const BalloonDecoratorCard = ({ serviceProvider }) => {
             <img
                 className="image"
                 alt="Image"
-                src="https://c.animaapp.com/bhmXrgIq/img/image@2x.png"
+                src={serviceProvider.path ? serviceProvider.path : "https://c.animaapp.com/bhmXrgIq/img/image@2x.png"}
             />
             <div className="frame">
                 <div className="info">
@@ -50,7 +50,7 @@ export const BalloonDecoratorCard = ({ serviceProvider }) => {
                     </div>
                     <div className="frame-3">
                         <div className="button-style-small">
-                            <div className="text-wrapper-2" onClick={handleViewDetails}>View Details</div>
+                            <div className="text-wrapper-2" style={{cursor : "pointer"}} onClick={handleViewDetails}>View Details</div>
                         </div>
                     </div>
                 </div>

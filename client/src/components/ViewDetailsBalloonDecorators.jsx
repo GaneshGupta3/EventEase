@@ -18,7 +18,7 @@ const ViewDetailsBalloonDecorators= () => {
         <div className="div">
           <div className="header-header">
             <div className="frame-2">
-              <IoMdArrowBack size={30} onClick={backClicked}/>
+              <IoMdArrowBack size={30} style={{cursor:"pointer"}} onClick={backClicked}/>
               <div className="frame-wrapper">
                 <div className="frame-3" />
               </div>
@@ -57,21 +57,13 @@ const ViewDetailsBalloonDecorators= () => {
           <div className="div-wrapper">
             <div className="frame-7">
               <div className="rectangle-wrapper">
-                <div className="rectangle" />
+                <img src={currServiceProvider.path?currServiceProvider.path : "../../bd2.webp"} className="rectangle" />
               </div>
               <div className="frame-8">
-                <div className="rectangle-2" />
+                <img src={currServiceProvider.patha?currServiceProvider.patha : "../../bd2a.webp"} className="rectangle-2" />
                 <div className="frame-9">
-                  <div className="rectangle-2" />
+                  <img src={currServiceProvider.pathb ? currServiceProvider.pathb : "../../bd2b.jpg"} className="rectangle-2" />
                   <div className="inf">
-                    <div className="innner">
-                      <img
-                        className="img"
-                        alt="Icon image"
-                        src="https://c.animaapp.com/N2aztpBp/img/icon---image@2x.png"
-                      />
-                      <div className="text-wrapper-3">3 more</div>
-                    </div>
                   </div>
                 </div>
               </div>

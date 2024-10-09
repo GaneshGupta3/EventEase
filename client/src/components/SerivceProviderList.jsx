@@ -276,7 +276,7 @@ const ServiceProviderList = () => {
                         <div className="frame-9">
                             <div className="div">
                                 <div className="featured-propertys">
-                                    Featured Venues
+
                                 </div>
                                 <div className="button-button">
                                     <div className="active-2" style={{cursor : "pointer"}}>Explore All</div>
@@ -317,6 +317,17 @@ const ServiceProviderList = () => {
                                     style={{cursor : "pointer"}}
                                 >
                                     Ballon Decorators
+                                </div>
+                                <div
+                                    className={currServiceProviderListType=="photographer" ? 'weddings-receptions' : 'text-wrapper-4'}
+                                    onClick={() => {
+                                        handleServiceTypeChange(
+                                            "photographer"
+                                        );
+                                    }}
+                                    style={{cursor : "pointer"}}
+                                >
+                                    photographer
                                 </div>
                             </div>
                         </div>

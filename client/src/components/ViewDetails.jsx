@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import ViewDetailsHall from './ViewDetailsHall';
 import ViewDetailsBalloonDecorators from './ViewDetailsBalloonDecorators';
-import CateringList from './CateringList';
+import ViewDetailsCatering from './ViewDetailsCatering';
 
 const ViewDetails = () => {
   const {currServiceProvider} = useSelector(store => store.user);
@@ -11,7 +11,7 @@ const ViewDetails = () => {
   <>
     {currServiceProvider.serviceName == "hall" && <ViewDetailsHall />}
     {currServiceProvider.serviceName == "balloon_decorator" && <ViewDetailsBalloonDecorators />}
-    {currServiceProvider.serviceName == "catering" && <CateringList />}
+    {currServiceProvider.serviceName == "catering" && <ViewDetailsCatering />}
   </>
   )
 }

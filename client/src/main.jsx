@@ -17,9 +17,6 @@ import AboutUs from "./components/AboutUs.jsx";
 import ServiceProviderList from "./components/SerivceProviderList.jsx";
 import ViewDetails from "./components/ViewDetailsHall.jsx"
 import SelectedServiceProvider from "./components/SelectedServiceProvider.jsx";
-import SearchHalls from "./components/SearchHalls.jsx";
-import BlogPage from "./components/BlogPage.jsx";
-import MainBlogPage from "./components/MainBlogPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,8 +40,6 @@ const router = createBrowserRouter([
       {path : "/serviceProvider/userProfile" , element : <UserSelected />},
       {path : "/serviceProvider/serviceDetails" , element : <ServiceDetails />},
       {path : "/serviceProvider/confirm" , element : <Confirm />},
-      {path: "/user/blogs" ,element : <MainBlogPage/>},
-      {path : "/user/searchHalls" ,element: <SearchHalls/>},
     ],
   },
 ]);

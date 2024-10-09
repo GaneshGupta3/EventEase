@@ -1,13 +1,11 @@
 import React from "react";
-import "./HallCard.css";
+import { FaCarAlt, FaRegUser } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { TbCoinRupeeFilled } from "react-icons/tb";
-import { FaCarAlt } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user";
-import { FaRegUser } from "react-icons/fa";
+import "./HallCard.css";
 
 export const HallCard = ({ serviceProvider }) => {
   const dispatch = useDispatch();
@@ -19,7 +17,7 @@ export const HallCard = ({ serviceProvider }) => {
 
   return (
     <div className="hall-card">
-      <img className="image" alt="Image" src="https://c.animaapp.com/bhmXrgIq/img/image@2x.png" />
+      <img className="image" alt="Image" src={serviceProvider.path?serviceProvider.path : "https://c.animaapp.com/bhmXrgIq/img/image@2x.png"} />
       <div className="frame">
         <div className="info">
           <div className="location">
