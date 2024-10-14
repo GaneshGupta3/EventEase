@@ -279,7 +279,6 @@ const ServiceProviderList = () => {
 
                                 </div>
                                 <div className="button-button">
-                                    <div className="active-2" style={{cursor : "pointer"}}>Explore All</div>
                                     <img
                                         className="img"
                                         alt="Icon v arrow"

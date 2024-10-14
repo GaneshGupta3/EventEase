@@ -6,10 +6,19 @@ import { IoMdArrowBack } from "react-icons/io";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import VegMenu from "./VegMenu";
 import NonVegMenu from "./NonVegMenu";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ViewDetailsCatering = () => {
     const { currServiceProvider } = useSelector((store) => store.user);
     const dispatch = useDispatch();
+    const handleSendMessage = () => {
+        console.log("send button clicked");
+        const message = encodeURIComponent(
+            "Hello, I would like to inquire about..."
+        );
+        const url = `https://wa.me/${currServiceProvider.serviceProvider.phoneNumber}?text=${message}`;
+        window.open(url, "_blank");
+    };
     console.log(currServiceProvider);
     const backClicked = () => {
         dispatch(userActions.cancelViewDetails());
@@ -68,12 +77,33 @@ const ViewDetailsCatering = () => {
                         <div className="div-wrapper">
                             <div className="frame-7">
                                 <div className="rectangle-wrapper">
-                                    <div className="rectangle" />
+                                    <img
+                                        src={
+                                            currServiceProvider.path
+                                                ? currServiceProvider.path
+                                                : "../../ca6.webp"
+                                        }
+                                        className="rectangle"
+                                    />
                                 </div>
                                 <div className="frame-8">
-                                    <div className="rectangle-2" />
+                                    <img
+                                        src={
+                                            currServiceProvider.patha
+                                                ? currServiceProvider.patha
+                                                : "../../ca6a.jpg"
+                                        }
+                                        className="rectangle-2"
+                                    />
                                     <div className="frame-9">
-                                        <div className="rectangle-2" />
+                                        <img
+                                            src={
+                                                currServiceProvider.pathb
+                                                    ? currServiceProvider.pathb
+                                                    : "../../ca6b.jpg"
+                                            }
+                                            className="rectangle-2"
+                                        />
                                         <div className="inf">
                                             <div className="innner">
                                                 <img
@@ -161,20 +191,53 @@ const ViewDetailsCatering = () => {
                                                         <div className="frame-20">
                                                             <div className="ellipse" />
                                                             <div className="text-wrapper-8">
-                                                              {currServiceProvider.vegMenu != 0 && "Veg Menu"}
-                                                              {currServiceProvider.nonvegMenu.length != 0 && "NonVeg Menu"}
+                                                                {currServiceProvider.vegMenu !=
+                                                                    0 &&
+                                                                    "Veg Menu"}
+                                                                {currServiceProvider
+                                                                    .nonvegMenu
+                                                                    .length !=
+                                                                    0 &&
+                                                                    "NonVeg Menu"}
                                                             </div>
                                                         </div>
                                                         <div className="text-wrapper-9">
-                                                            {currServiceProvider.vegMenu.length != 0 && currServiceProvider.vegMenu.map((vegItem)=>{return <VegMenu vegItem={vegItem}/>})}
-                                                            {currServiceProvider.nonvegMenu.length != 0 && currServiceProvider.nonvegMenu.map((nonvegItem)=>{return <NonVegMenu nonvegItem={nonvegItem}/>})}
-                                                            
+                                                            {currServiceProvider
+                                                                .vegMenu
+                                                                .length != 0 &&
+                                                                currServiceProvider.vegMenu.map(
+                                                                    (
+                                                                        vegItem
+                                                                    ) => {
+                                                                        return (
+                                                                            <VegMenu
+                                                                                vegItem={
+                                                                                    vegItem
+                                                                                }
+                                                                            />
+                                                                        );
+                                                                    }
+                                                                )}
+                                                            {currServiceProvider
+                                                                .nonvegMenu
+                                                                .length != 0 &&
+                                                                currServiceProvider.nonvegMenu.map(
+                                                                    (
+                                                                        nonvegItem
+                                                                    ) => {
+                                                                        return (
+                                                                            <NonVegMenu
+                                                                                nonvegItem={
+                                                                                    nonvegItem
+                                                                                }
+                                                                            />
+                                                                        );
+                                                                    }
+                                                                )}
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="frame-19">
-                                                    
-                                                </div>
+                                                <div className="frame-19"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -184,7 +247,7 @@ const ViewDetailsCatering = () => {
                                                 Agent Information
                                             </div>
                                             <div className="frame-22">
-                                                <div className="rectangle-3" />
+                                            <img src="../../public/serviceProviderProfilePhoto.jpg" className="rectangle-3" />
                                                 <div className="agent-profile">
                                                     <div className="text-wrapper-10">
                                                         {
@@ -233,62 +296,19 @@ const ViewDetailsCatering = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="frame-23">
-                                    <div className="frame-24">
-                                        <div className="frame-15">
-                                            <div className="text-wrapper-5">
-                                                {""}
-                                            </div>
-                                            <div className="labels">
-                                                <div className="text-field-large">
-                                                    <div className="div-3">
-                                                        <img
-                                                            className="img"
-                                                            alt="Icon user"
-                                                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---user.svg"
-                                                        />
-                                                        <div className="text-wrapper-13">
-                                                            Full Name
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="text-field-large">
-                                                    <div className="div-3">
-                                                        <img
-                                                            className="img"
-                                                            alt="Icon call"
-                                                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---call.svg"
-                                                        />
-                                                        <div className="text-wrapper-13">
-                                                            Phone Number
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="text-field-large">
-                                                    <div className="div-3">
-                                                        <img
-                                                            className="img"
-                                                            alt="Icon calendar"
-                                                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---calendar.svg"
-                                                        />
-                                                        <div className="text-wrapper-13">
-                                                            Date
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="input-box">
-                                                    <div className="text-wrapper-13">
-                                                        Message
-                                                    </div>
-                                                </div>
-                                                <div className="button-style-small">
-                                                    <div className="text-wrapper-4">
-                                                        Send Message
-                                                    </div>
+                                                <FaWhatsapp size={32} />
+                                                <div
+                                                    style={{
+                                                        backgroundColor:
+                                                            "Black",
+                                                        fontSize: "20px",
+                                                        color: "white",
+                                                        padding: "10px",
+                                                        borderRadius: "10%",
+                                                    }}
+                                                    onClick={handleSendMessage}
+                                                >
+                                                    sendMessage
                                                 </div>
                                             </div>
                                         </div>

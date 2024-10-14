@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { BalloonDecoratorCard } from './BalloonDecoratorCard';
-import styles from "./BalloonDecoratorList.module.css"
+// import styles from "./BalloonDecoratorList.module.css"
 
 const BalloonDecoratorList = () => {
   const {currentServiceProviderList} = useSelector(store => store.user);

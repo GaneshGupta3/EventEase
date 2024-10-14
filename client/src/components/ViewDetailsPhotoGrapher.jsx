@@ -5,8 +5,8 @@ import { userActions } from "../store/user";
 import { IoMdArrowBack } from "react-icons/io";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
-import ContactAgentButton from "./ContactAgentButton";
-const ViewDetailsHall= () => {
+
+const ViewDetailsPhotoGrapher = () => {
   const {currServiceProvider} = useSelector(store => store.user);
   const dispatch = useDispatch();
   console.log(currServiceProvider);
@@ -65,12 +65,12 @@ const ViewDetailsHall= () => {
           <div className="div-wrapper">
             <div className="frame-7">
               <div className="rectangle-wrapper">
-                <img className="rectangle" src={currServiceProvider.path ? currServiceProvider.path : "../../hall10.jpeg"}/>
+                <img className="rectangle" src={currServiceProvider.path ? currServiceProvider.path : "../../p6.jpg"}/>
               </div>
               <div className="frame-8">
-                <img className="rectangle-2" src={currServiceProvider.patha ? currServiceProvider.patha : "../../hall3a.jpg"}/>
+                <img className="rectangle-2" src={currServiceProvider.patha ? currServiceProvider.patha : "../../p6a.jpg"}/>
                 <div className="frame-9">
-                  <img className="rectangle-2" src={currServiceProvider.pathb ? currServiceProvider.pathb : "../../hall3b.jpg"}/>
+                  <img className="rectangle-2" src={currServiceProvider.pathb ? currServiceProvider.pathb : "../../p6b.jpg"}/>
                   <div className="inf">
                   </div>
                 </div>
@@ -151,7 +151,7 @@ const ViewDetailsHall= () => {
                   <div className="frame-21">
                     <div className="text-wrapper-5">Agent Information</div>
                     <div className="frame-22">
-                      <img src="../../public/serviceProviderProfilePhoto.jpg" className="rectangle-3" />
+                    <img src="../../public/serviceProviderProfilePhoto.jpg" className="rectangle-3" />
                       <div className="agent-profile">
                         <div className="text-wrapper-10">{currServiceProvider.serviceProvider.username}</div>
                         <div className="div-3">
@@ -269,5 +269,6 @@ const ViewDetailsHall= () => {
     </div>
     </>
   );
-};
-export default ViewDetailsHall;
+}
+
+export default ViewDetailsPhotoGrapher;

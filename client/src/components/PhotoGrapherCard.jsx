@@ -5,6 +5,8 @@ import { HiMiniUserGroup } from "react-icons/hi2";
 import { TbCoinRupeeFilled } from "react-icons/tb";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user";
+import { FaCamera } from "react-icons/fa";
+import { IoMdImages } from "react-icons/io";
 import "./HallCard.css";
 
 const PhotoGrapherCard = ({serviceProvider}) => {
@@ -17,7 +19,7 @@ const PhotoGrapherCard = ({serviceProvider}) => {
 
   return (
     <div className="hall-card">
-      <img className="image" alt="Image" src="../../hall1.jpg" />
+      <img className="image" alt="Image" src={serviceProvider.path ? serviceProvider.path : "../../p3.jpg"} />
       <div className="frame">
         <div className="info">
           <div className="location">
@@ -26,16 +28,16 @@ const PhotoGrapherCard = ({serviceProvider}) => {
           </div>
           {/* Additional details */}
           <div className={'details grid-display'}>
-            <strong><FaLocationDot size={30} /> {serviceProvider.locations}</strong>
-            <strong><HiMiniUserGroup size={30} /> {serviceProvider.guests} Guests</strong>
+            <strong><FaCamera size={30}/>
+            {serviceProvider.cameraDetails}</strong>
             <strong><TbCoinRupeeFilled size={30} /> {serviceProvider.advanceBooking} advance</strong>
-            <strong><FaCarAlt size={30} /> {serviceProvider.parkingNumbers} parkings</strong>
+            <strong><TbCoinRupeeFilled size={30} /> {serviceProvider.costPerPhoto} /photo</strong>
+            <strong><IoMdImages size={30}/>{serviceProvider.photoMaterial}</strong>
           </div>
           <div className="frame-3">
             <div className="button-style-small" onClick={handleViewDetails}>
-              <div className="text-wrapper-2">View Details</div>
+              <div className="text-wrapper-2" onclick>View Details</div>
             </div>
-            <div className="element">₹{serviceProvider.totalCost}</div>
           </div>
         </div>
       </div>

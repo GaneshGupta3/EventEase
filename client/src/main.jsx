@@ -17,6 +17,8 @@ import AboutUs from "./components/AboutUs.jsx";
 import ServiceProviderList from "./components/SerivceProviderList.jsx";
 import ViewDetails from "./components/ViewDetailsHall.jsx"
 import SelectedServiceProvider from "./components/SelectedServiceProvider.jsx";
+import SearchHalls from "./components/SearchHall.jsx";
+import BalloonSearch from "./components/BalloonSearch.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,8 @@ const router = createBrowserRouter([
       {path : "/user/register", element: <UserRegister /> },
       {path : "/user/homePage", element: <ServiceProviderList /> },
       {path : "/user/serviceProviderDetails", element: <ViewDetails /> },
+      {path: "/user/searchHalls" , element : <SearchHalls></SearchHalls>},
+      {path: "/user/searchBalloonDecorator" , element : <BalloonSearch />},
       // {path : "/user/serviceProviderProfile", element: <SelectedServiceProvider /> },
       {path : "/serviceProvider/register", element: <ServiceProviderRegister /> },
       {path : "/serviceProvider/login", element: <ServiceProviderLogin /> },
