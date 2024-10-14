@@ -7,7 +7,10 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/user";
+<<<<<<< HEAD
 import { PiMapPinSimpleAreaFill } from "react-icons/pi";
+=======
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
 
 export const BalloonDecoratorCard = ({ serviceProvider }) => {
     const dispatch = useDispatch();
@@ -36,17 +39,29 @@ export const BalloonDecoratorCard = ({ serviceProvider }) => {
                             <FaLocationDot size={30} />{" "}
                             {serviceProvider.locations}
                         </strong>
+<<<<<<< HEAD
                         {/* <strong>
                             <HiMiniUserGroup size={30} />{" "}
                             {serviceProvider.chargesPerSquareFeet} Guests
                         </strong> */}
+=======
+                        <strong>
+                            <HiMiniUserGroup size={30} />{" "}
+                            {serviceProvider.chargesPerSquareFeet} Guests
+                        </strong>
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                         <strong>
                             <TbCoinRupeeFilled size={30} />
                             {serviceProvider.chargesPerSquareFeet} / sq ft.
                         </strong>
                         <strong>
+<<<<<<< HEAD
                         <PiMapPinSimpleAreaFill size={30}/>
                             {serviceProvider.maximumLandCoverage} sq ft.
+=======
+                            <FaCarAlt size={30} />
+                            {serviceProvider.maximumLandCoverage} parkings
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                         </strong>
                     </div>
                     <div className="frame-3">

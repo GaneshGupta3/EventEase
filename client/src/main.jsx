@@ -35,8 +35,11 @@ const router = createBrowserRouter([
       {path : "/user/register", element: <UserRegister /> },
       {path : "/user/homePage", element: <ServiceProviderList /> },
       {path : "/user/serviceProviderDetails", element: <ViewDetails /> },
+<<<<<<< HEAD
       {path: "/user/searchHalls" , element : <SearchHalls></SearchHalls>},
       {path: "/user/searchBalloonDecorator" , element : <BalloonSearch />},
+=======
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
       // {path : "/user/serviceProviderProfile", element: <SelectedServiceProvider /> },
       {path : "/serviceProvider/register", element: <ServiceProviderRegister /> },
       {path : "/serviceProvider/login", element: <ServiceProviderLogin /> },

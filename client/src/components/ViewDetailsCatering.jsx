@@ -6,11 +6,15 @@ import { IoMdArrowBack } from "react-icons/io";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import VegMenu from "./VegMenu";
 import NonVegMenu from "./NonVegMenu";
+<<<<<<< HEAD
 import { FaWhatsapp } from "react-icons/fa";
+=======
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
 
 const ViewDetailsCatering = () => {
     const { currServiceProvider } = useSelector((store) => store.user);
     const dispatch = useDispatch();
+<<<<<<< HEAD
     const handleSendMessage = () => {
         console.log("send button clicked");
         const message = encodeURIComponent(
@@ -19,6 +23,8 @@ const ViewDetailsCatering = () => {
         const url = `https://wa.me/${currServiceProvider.serviceProvider.phoneNumber}?text=${message}`;
         window.open(url, "_blank");
     };
+=======
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
     console.log(currServiceProvider);
     const backClicked = () => {
         dispatch(userActions.cancelViewDetails());
@@ -77,6 +83,7 @@ const ViewDetailsCatering = () => {
                         <div className="div-wrapper">
                             <div className="frame-7">
                                 <div className="rectangle-wrapper">
+<<<<<<< HEAD
                                     <img
                                         src={
                                             currServiceProvider.path
@@ -104,6 +111,14 @@ const ViewDetailsCatering = () => {
                                             }
                                             className="rectangle-2"
                                         />
+=======
+                                    <div className="rectangle" />
+                                </div>
+                                <div className="frame-8">
+                                    <div className="rectangle-2" />
+                                    <div className="frame-9">
+                                        <div className="rectangle-2" />
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                                         <div className="inf">
                                             <div className="innner">
                                                 <img
@@ -191,6 +206,7 @@ const ViewDetailsCatering = () => {
                                                         <div className="frame-20">
                                                             <div className="ellipse" />
                                                             <div className="text-wrapper-8">
+<<<<<<< HEAD
                                                                 {currServiceProvider.vegMenu !=
                                                                     0 &&
                                                                     "Veg Menu"}
@@ -238,6 +254,22 @@ const ViewDetailsCatering = () => {
                                                     </div>
                                                 </div>
                                                 <div className="frame-19"></div>
+=======
+                                                              {currServiceProvider.vegMenu != 0 && "Veg Menu"}
+                                                              {currServiceProvider.nonvegMenu.length != 0 && "NonVeg Menu"}
+                                                            </div>
+                                                        </div>
+                                                        <div className="text-wrapper-9">
+                                                            {currServiceProvider.vegMenu.length != 0 && currServiceProvider.vegMenu.map((vegItem)=>{return <VegMenu vegItem={vegItem}/>})}
+                                                            {currServiceProvider.nonvegMenu.length != 0 && currServiceProvider.nonvegMenu.map((nonvegItem)=>{return <NonVegMenu nonvegItem={nonvegItem}/>})}
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="frame-19">
+                                                    
+                                                </div>
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                                             </div>
                                         </div>
                                     </div>
@@ -247,7 +279,11 @@ const ViewDetailsCatering = () => {
                                                 Agent Information
                                             </div>
                                             <div className="frame-22">
+<<<<<<< HEAD
                                             <img src="../../public/serviceProviderProfilePhoto.jpg" className="rectangle-3" />
+=======
+                                                <div className="rectangle-3" />
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                                                 <div className="agent-profile">
                                                     <div className="text-wrapper-10">
                                                         {
@@ -296,6 +332,7 @@ const ViewDetailsCatering = () => {
                                                         </div>
                                                     </div>
                                                 </div>
+<<<<<<< HEAD
                                                 <FaWhatsapp size={32} />
                                                 <div
                                                     style={{
@@ -309,6 +346,64 @@ const ViewDetailsCatering = () => {
                                                     onClick={handleSendMessage}
                                                 >
                                                     sendMessage
+=======
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="frame-23">
+                                    <div className="frame-24">
+                                        <div className="frame-15">
+                                            <div className="text-wrapper-5">
+                                                {""}
+                                            </div>
+                                            <div className="labels">
+                                                <div className="text-field-large">
+                                                    <div className="div-3">
+                                                        <img
+                                                            className="img"
+                                                            alt="Icon user"
+                                                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---user.svg"
+                                                        />
+                                                        <div className="text-wrapper-13">
+                                                            Full Name
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="text-field-large">
+                                                    <div className="div-3">
+                                                        <img
+                                                            className="img"
+                                                            alt="Icon call"
+                                                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---call.svg"
+                                                        />
+                                                        <div className="text-wrapper-13">
+                                                            Phone Number
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="text-field-large">
+                                                    <div className="div-3">
+                                                        <img
+                                                            className="img"
+                                                            alt="Icon calendar"
+                                                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---calendar.svg"
+                                                        />
+                                                        <div className="text-wrapper-13">
+                                                            Date
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="input-box">
+                                                    <div className="text-wrapper-13">
+                                                        Message
+                                                    </div>
+                                                </div>
+                                                <div className="button-style-small">
+                                                    <div className="text-wrapper-4">
+                                                        Send Message
+                                                    </div>
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                                                 </div>
                                             </div>
                                         </div>

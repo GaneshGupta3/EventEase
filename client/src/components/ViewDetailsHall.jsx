@@ -4,18 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../store/user";
 import { IoMdArrowBack } from "react-icons/io";
 import { FaIndianRupeeSign } from "react-icons/fa6";
+<<<<<<< HEAD
 import { FaWhatsapp } from "react-icons/fa";
 import ContactAgentButton from "./ContactAgentButton";
+=======
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
 const ViewDetailsHall= () => {
   const {currServiceProvider} = useSelector(store => store.user);
   const dispatch = useDispatch();
   console.log(currServiceProvider);
+<<<<<<< HEAD
   const handleSendMessage = ()=>{
     console.log("send button clicked");
     const message = encodeURIComponent('Hello, I would like to inquire about...');
     const url = `https://wa.me/${currServiceProvider.serviceProvider.phoneNumber}?text=${message}`;
     window.open(url, '_blank');
   }
+=======
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
   const backClicked = ()=>{
     dispatch(userActions.cancelViewDetails());
   }
@@ -151,7 +157,11 @@ const ViewDetailsHall= () => {
                   <div className="frame-21">
                     <div className="text-wrapper-5">Agent Information</div>
                     <div className="frame-22">
+<<<<<<< HEAD
                       <img src="../../public/serviceProviderProfilePhoto.jpg" className="rectangle-3" />
+=======
+                      <div className="rectangle-3" />
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                       <div className="agent-profile">
                         <div className="text-wrapper-10">{currServiceProvider.serviceProvider.username}</div>
                         <div className="div-3">
@@ -174,6 +184,7 @@ const ViewDetailsHall= () => {
                           />
                           <div className="text-wrapper-12">+91 {currServiceProvider.serviceProvider.phoneNumber}</div>
                         </div>
+<<<<<<< HEAD
 
 
 
@@ -183,11 +194,62 @@ const ViewDetailsHall= () => {
                       </div>
                       <FaWhatsapp size={32}/> 
                       <div style={{backgroundColor : "Black" , fontSize:"20px",color:"white",padding:"10px",borderRadius:"10%"}} onClick={handleSendMessage}>sendMessage</div>
+=======
+                      </div>
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
                     </div>
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
               
+=======
+              <div className="frame-23">
+                <div className="frame-24">
+                  <div className="frame-15">
+                    <div className="text-wrapper-5">{""}</div>
+                    <div className="labels">
+                      <div className="text-field-large">
+                        <div className="div-3">
+                          <img
+                            className="img"
+                            alt="Icon user"
+                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---user.svg"
+                          />
+                          <div className="text-wrapper-13">Full Name</div>
+                        </div>
+                      </div>
+                      <div className="text-field-large">
+                        <div className="div-3">
+                          <img
+                            className="img"
+                            alt="Icon call"
+                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---call.svg"
+                          />
+                          <div className="text-wrapper-13">Phone Number</div>
+                        </div>
+                      </div>
+                      <div className="text-field-large">
+                        <div className="div-3">
+                          <img
+                            className="img"
+                            alt="Icon calendar"
+                            src="https://c.animaapp.com/N2aztpBp/img/icon---24px---calendar.svg"
+                          />
+                          <div className="text-wrapper-13">Date</div>
+                        </div>
+                      </div>
+                      <div className="input-box">
+                        <div className="text-wrapper-13">Message</div>
+                      </div>
+                      <div className="button-style-small">
+                        <div className="text-wrapper-4">Send Message</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+>>>>>>> 34e58f680633b3249579002b0275f2e88f039403
             </div>
           </div>
         </div>
