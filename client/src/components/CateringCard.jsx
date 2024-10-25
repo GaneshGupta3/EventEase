@@ -18,11 +18,7 @@ export const CateringCard = ({ serviceProvider }) => {
 
   return (
     <div className="hall-card">
-<<<<<<< HEAD
       <img className="image" alt="Image" src={serviceProvider.path? serviceProvider.path : "https://c.animaapp.com/bhmXrgIq/img/image@2x.png"} />
-=======
-      <img className="image" alt="Image" src="https://c.animaapp.com/bhmXrgIq/img/image@2x.png" />
->>>>>>> 34e58f680633b3249579002b0275f2e88f039403
       <div className="frame">
         <div className="info">
           <div className="location">

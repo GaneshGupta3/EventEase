@@ -11,11 +11,7 @@ const HallList = () => {
     const dispatch = useDispatch();
 
     const handleSeeList = ()=>{
-<<<<<<< HEAD
       dispatch(userActions.toggleSeeList())
-=======
-      dispatch(userActions.toggleSeeList());
->>>>>>> 34e58f680633b3249579002b0275f2e88f039403
     }
     return (
         <>
